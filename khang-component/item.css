@@ -1,0 +1,36 @@
+.component-item{
+   width: 18%;
+   height: 350px;
+   border: 2px solid black;
+    padding: 4px;
+}
+
+
+.nameitem{
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+}
+
+.content-gia{
+    display: flex;
+    flex-direction: row;
+}
+
+.gia{
+    width: 50%;
+}
+
+.daugia{
+    width: 50%;
+}
+
+.daugiangay{
+    width: 100%;
+    margin-top: 8px;
+}
+
+.muangay{
+    width: 100%;
+    margin-top: 8px;
+}
