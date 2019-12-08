@@ -1,0 +1,10 @@
+.formDangSanPham{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+}
+
+.specialInput{
+}
