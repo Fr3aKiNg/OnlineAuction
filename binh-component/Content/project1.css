@@ -159,38 +159,3 @@
     width: 24px;
     height: 24px;
 }
-
-footer {
-    position: relative;
-    bottom: 0px;
-    font-family: 'Poppins', sans-serif;
-    background: #F2F2F2;
-    height: 200px;
-    line-height: 200px;
-    color: #000000;
-}
-
-footer .footer-menu li {
-    display: inline-block;
-}
-
-footer .footer-menu li a {
-    color: #000000;
-    margin: 0px 10px;
-    text-decoration: none;
-}
-
-footer .fa {
-    color: #000000;
-    font-size: 30px;
-}
-
-.copyright {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    /* identical to box height */
-    text-transform: uppercase;
-    color: ;
-}
