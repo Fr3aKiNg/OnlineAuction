@@ -1,0 +1,69 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="Product list screen.css">
+</head>
+
+<body>
+    <!--Phan header copy cua tat binh qua-->
+    <div class="header">
+        <img class="icon" src="../binh-component/iconTrello.png">
+
+        <h1 class="title">TRADE</h1>
+        <input class="inputUserName" type="text" placeholder="username">
+
+        </input>
+        <input class="inputPass" type="text" placeholder="pass">
+
+        </input>
+        <button type="button" class="btn btn-default">Sign In</button>
+        <button type="button" class="btn" style="background:#D7D7D7">Sign Up</button>
+    </div>
+
+    <div class="body">
+        <h1 class="cateTitle" style="text-align: center;">category title OR searched name</h1>
+
+        <div style="height: 0px; border: 1px solid #000000; margin: 10px;"></div>
+
+        <nav class="sort_search_bar navbar filter-bar" style="margin: 10px;">
+            <p class="navbar-brand" style="font-weight: bold; font-size: 24px;">Sort by:</p>
+            <button type="button" class="btn btn-secondary">Time</button>
+            <button type="button" class="btn btn-secondary">Price</button>
+            <form class="form-inline" style="left: 0px;">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+
+        <div class="content">
+            <div class="card category">
+                <div class="card-header border-bottom-0"
+                    style="font-weight: bold; text-align: center; font-size: 24px; padding: 10px;">
+                    Featured
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="text-align: center; background-color: #C4C4C4;;">
+                        <div class="btn-group dropright">
+                            <a type="button" class="btn dropdown-toggle btn-light" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Điện tử
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Điện thoại di động</a>
+                                <a class="dropdown-item" href="#">Máy tính xách tay</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="productlist"></div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
