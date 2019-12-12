@@ -159,6 +159,7 @@
 .imgFacebook {
     width: 24px;
     height: 24px;
+    <<<<<<< HEAD: binh-component/project1.css
 }
 
 footer {
@@ -194,4 +195,5 @@ footer .fa {
     /* identical to box height */
     text-transform: uppercase;
     /* color: ; */
+    =======>>>>>>>2454b7539c6dce4f5c351669ebbe8eeaf13401b7: binh-component/Content/project1.css
 }
