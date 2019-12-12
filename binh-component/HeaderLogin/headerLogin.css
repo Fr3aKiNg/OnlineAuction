@@ -5,11 +5,11 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center; */
-    background: #D7D7D7;
+    background: #0fd3ff;
 }
 
 .logo {
-    margin-top: 12px;
+    margin-top: 3px;
     float: left;
     display: flex;
     align-items: center;
