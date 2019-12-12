@@ -5,7 +5,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    background: #d7d7d7;
+    background: #40d7f0;
 }
 
 .header>input {
@@ -54,6 +54,7 @@
     font-size: 12px;
     /* identical to box height */
     text-transform: uppercase;
+    background: #00aeff;
 }
 
 .header>.btn {

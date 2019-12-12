@@ -1,0 +1,408 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./chi-component//produce list screen//Product list screen.css">
+    <link rel="stylesheet" href="./binh-component/HeaderNologin/headerNoLogin.css">
+</head>
+
+<body>
+    <!--Phan header copy cua tat binh qua-->
+    <div class="header">
+        <p>
+            <a href="./index.html"><img class="icon" style="width: 70px;height: 70px;" src="./binh-component/HeaderNologin/iconTrello.png">
+            </a>
+        </p>
+        <h1 class="title">TRADE</h1>
+        <input class="inputUserName" type="text" placeholder="username">
+
+        </input>
+        <input class="inputPass" type="text" placeholder="pass">
+
+        </input>
+        <button type="button" class="btn btn-default">Sign In</button>
+        <button type="button" class="btn" style="background:#40d7f0"><a href="./sign-up.html">Sign Up</a></button>
+    </div>
+    <div class="container">
+        <div class="body">
+            <h1 class="cateTitle" style="text-align: center;">Tìm kiếm cho "Điện thoại XXX"</h1>
+
+            <div style="height: 0px; border: 1px solid #000000; margin: 10px;"></div>
+
+            <nav class="sort_search_bar navbar filter-bar" style="margin: 10px;">
+                <p class="navbar-brand" style="font-weight: bold; font-size: 24px;">Sort by:</p>
+                <button type="button" class="btn btn-secondary">Time</button>
+                <button type="button" class="btn btn-secondary">Price</button>
+                <form class="form-inline" style="left: 0px;">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </nav>
+
+            <div class="content">
+                <div class="card category">
+                    <div class="card-header border-bottom-0" style="font-weight: bold; text-align: center; font-size: 24px; padding: 10px;">
+                        Featured
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" style="text-align: center; background-color: #C4C4C4;;">
+                            <div class="btn-group dropright">
+                                <a type="button" class="btn dropdown-toggle btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Điện tử
+                            </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Điện thoại di động</a>
+                                    <a class="dropdown-item" href="#">Máy tính xách tay</a>
+                                </div>
+                            </div>
+                            <div class="btn-group dropright">
+                                <a type="button" class="btn dropdown-toggle btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Điện tử
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Điện thoại di động</a>
+                                    <a class="dropdown-item" href="#">Máy tính xách tay</a>
+                                </div>
+                            </div>
+                            <div class="btn-group dropright">
+                                <a type="button" class="btn dropdown-toggle btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Điện tử
+                                    </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Điện thoại di động</a>
+                                    <a class="dropdown-item" href="#">Máy tính xách tay</a>
+                                </div>
+                            </div>
+                            <div class="btn-group dropright">
+                                <a type="button" class="btn dropdown-toggle btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Điện tử
+                                        </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Điện thoại di động</a>
+                                    <a class="dropdown-item" href="#">Máy tính xách tay</a>
+                                </div>
+                            </div>
+                            <div class="btn-group dropright">
+                                <a type="button" class="btn dropdown-toggle btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Điện tử
+                                            </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Điện thoại di động</a>
+                                    <a class="dropdown-item" href="#">Máy tính xách tay</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="productlist">
+                    <div class="component-item" style="width: 20%;height: 455px;float: left;padding: 5px;">
+                        <div clas="img" style="display: flex; justify-content: center; ">
+                            <img src="https://stcv4.hnammobile.com//uploads/products/colors/1/apple-iphone-x-256gb-99--5972814160-jpg.jpg" height="150px" width="auto">
+                        </div>
+                        <p class="nameitem">IPHONE X</p>
+                        <p style="font-size: 12px; margin-top: 2px;">Giá mặc định : 15.000.000 vnd</p>
+                        <div class="content-gia">
+                            <div class="gia">
+                                <p style="font-size: 12px; margin-top: 2px;">Max:</p>
+                                <p style="font-size: 14px; color:red; margin-top: 2px;"><b>19.000.000</b></p>
+                            </div>
+                            <div class="daugia">
+                                <p style="font-size: 12px;">Lượt ra giá: <b style="color :red">3</b></p>
+                                <p style="font-size: 12px;">Còn lại:<b style="color :red">1</b> ngày</p>
+                            </div>
+                        </div>
+                        <div class="daugiangay" style="
+    margin-bottom: 4px;
+">
+                            <button type="button" class="btn btn-warning" style="width: 100%; font-size: 12px;">Đấu giá ngay</button>
+                        </div>
+                        <div class="muangay">
+                            <button type="button" class="btn btn-danger" style="width: 100%; font-size: 12px;">Mua ngay: 300.000 vnd</button>
+                        </div>
+                    </div>
+                    <div class="component-item" style="width: 20%;height: 455px;float: left;padding: 5px;">
+                        <div clas="img" style="display: flex; justify-content: center; ">
+                            <img src="https://stcv4.hnammobile.com//uploads/products/colors/1/apple-iphone-x-256gb-99--5972814160-jpg.jpg" height="150px" width="auto">
+                        </div>
+                        <p class="nameitem">IPHONE X</p>
+                        <p style="font-size: 12px; margin-top: 2px;">Giá mặc định : 15.000.000 vnd</p>
+                        <div class="content-gia">
+                            <div class="gia">
+                                <p style="font-size: 12px; margin-top: 2px;">Max:</p>
+                                <p style="font-size: 14px; color:red; margin-top: 2px;"><b>19.000.000</b></p>
+                            </div>
+                            <div class="daugia">
+                                <p style="font-size: 12px;">Lượt ra giá: <b style="color :red">3</b></p>
+                                <p style="font-size: 12px;">Còn lại:<b style="color :red">1</b> ngày</p>
+                            </div>
+                        </div>
+                        <div class="daugiangay" style="
+    margin-bottom: 4px;
+">
+                            <button type="button" class="btn btn-warning" style="width: 100%; font-size: 12px;">Đấu giá ngay</button>
+                        </div>
+                        <div class="muangay">
+                            <button type="button" class="btn btn-danger" style="width: 100%; font-size: 12px;">Mua ngay: 300.000 vnd</button>
+                        </div>
+                    </div>
+                    <div class="component-item" style="width: 20%;height: 455px;float: left;padding: 5px;">
+                        <div clas="img" style="display: flex; justify-content: center; ">
+                            <img src="https://stcv4.hnammobile.com//uploads/products/colors/1/apple-iphone-x-256gb-99--5972814160-jpg.jpg" height="150px" width="auto">
+                        </div>
+                        <p class="nameitem">IPHONE X</p>
+                        <p style="font-size: 12px; margin-top: 2px;">Giá mặc định : 15.000.000 vnd</p>
+                        <div class="content-gia">
+                            <div class="gia">
+                                <p style="font-size: 12px; margin-top: 2px;">Max:</p>
+                                <p style="font-size: 14px; color:red; margin-top: 2px;"><b>19.000.000</b></p>
+                            </div>
+                            <div class="daugia">
+                                <p style="font-size: 12px;">Lượt ra giá: <b style="color :red">3</b></p>
+                                <p style="font-size: 12px;">Còn lại:<b style="color :red">1</b> ngày</p>
+                            </div>
+                        </div>
+                        <div class="daugiangay" style="
+    margin-bottom: 4px;
+">
+                            <button type="button" class="btn btn-warning" style="width: 100%; font-size: 12px;">Đấu giá ngay</button>
+                        </div>
+                        <div class="muangay">
+                            <button type="button" class="btn btn-danger" style="width: 100%; font-size: 12px;">Mua ngay: 300.000 vnd</button>
+                        </div>
+                    </div>
+                    <div class="component-item" style="width: 20%;height: 455px;float: left;padding: 5px;">
+                        <div clas="img" style="display: flex; justify-content: center; ">
+                            <img src="https://stcv4.hnammobile.com//uploads/products/colors/1/apple-iphone-x-256gb-99--5972814160-jpg.jpg" height="150px" width="auto">
+                        </div>
+                        <p class="nameitem">IPHONE X</p>
+                        <p style="font-size: 12px; margin-top: 2px;">Giá mặc định : 15.000.000 vnd</p>
+                        <div class="content-gia">
+                            <div class="gia">
+                                <p style="font-size: 12px; margin-top: 2px;">Max:</p>
+                                <p style="font-size: 14px; color:red; margin-top: 2px;"><b>19.000.000</b></p>
+                            </div>
+                            <div class="daugia">
+                                <p style="font-size: 12px;">Lượt ra giá: <b style="color :red">3</b></p>
+                                <p style="font-size: 12px;">Còn lại:<b style="color :red">1</b> ngày</p>
+                            </div>
+                        </div>
+                        <div class="daugiangay" style="
+    margin-bottom: 4px;
+">
+                            <button type="button" class="btn btn-warning" style="width: 100%; font-size: 12px;">Đấu giá ngay</button>
+                        </div>
+                        <div class="muangay">
+                            <button type="button" class="btn btn-danger" style="width: 100%; font-size: 12px;">Mua ngay: 300.000 vnd</button>
+                        </div>
+                    </div>
+                    <div class="component-item" style="width: 20%;height: 455px;float: left;padding: 5px;">
+                        <div clas="img" style="display: flex; justify-content: center; ">
+                            <img src="https://stcv4.hnammobile.com//uploads/products/colors/1/apple-iphone-x-256gb-99--5972814160-jpg.jpg" height="150px" width="auto">
+                        </div>
+                        <p class="nameitem">IPHONE X</p>
+                        <p style="font-size: 12px; margin-top: 2px;">Giá mặc định : 15.000.000 vnd</p>
+                        <div class="content-gia">
+                            <div class="gia">
+                                <p style="font-size: 12px; margin-top: 2px;">Max:</p>
+                                <p style="font-size: 14px; color:red; margin-top: 2px;"><b>19.000.000</b></p>
+                            </div>
+                            <div class="daugia">
+                                <p style="font-size: 12px;">Lượt ra giá: <b style="color :red">3</b></p>
+                                <p style="font-size: 12px;">Còn lại:<b style="color :red">1</b> ngày</p>
+                            </div>
+                        </div>
+                        <div class="daugiangay" style="
+    margin-bottom: 4px;
+">
+                            <button type="button" class="btn btn-warning" style="width: 100%; font-size: 12px;">Đấu giá ngay</button>
+                        </div>
+                        <div class="muangay">
+                            <button type="button" class="btn btn-danger" style="width: 100%; font-size: 12px;">Mua ngay: 300.000 vnd</button>
+                        </div>
+                    </div>
+                    <div class="component-item" style="width: 20%;height: 455px;float: left;padding: 5px;">
+                        <div clas="img" style="display: flex; justify-content: center; ">
+                            <img src="https://stcv4.hnammobile.com//uploads/products/colors/1/apple-iphone-x-256gb-99--5972814160-jpg.jpg" height="150px" width="auto">
+                        </div>
+                        <p class="nameitem">IPHONE X</p>
+                        <p style="font-size: 12px; margin-top: 2px;">Giá mặc định : 15.000.000 vnd</p>
+                        <div class="content-gia">
+                            <div class="gia">
+                                <p style="font-size: 12px; margin-top: 2px;">Max:</p>
+                                <p style="font-size: 14px; color:red; margin-top: 2px;"><b>19.000.000</b></p>
+                            </div>
+                            <div class="daugia">
+                                <p style="font-size: 12px;">Lượt ra giá: <b style="color :red">3</b></p>
+                                <p style="font-size: 12px;">Còn lại:<b style="color :red">1</b> ngày</p>
+                            </div>
+                        </div>
+                        <div class="daugiangay" style="
+    margin-bottom: 4px;
+">
+                            <button type="button" class="btn btn-warning" style="width: 100%; font-size: 12px;">Đấu giá ngay</button>
+                        </div>
+                        <div class="muangay">
+                            <button type="button" class="btn btn-danger" style="width: 100%; font-size: 12px;">Mua ngay: 300.000 vnd</button>
+                        </div>
+                    </div>
+                    <div class="component-item" style="width: 20%;height: 455px;float: left;padding: 5px;">
+                        <div clas="img" style="display: flex; justify-content: center; ">
+                            <img src="https://stcv4.hnammobile.com//uploads/products/colors/1/apple-iphone-x-256gb-99--5972814160-jpg.jpg" height="150px" width="auto">
+                        </div>
+                        <p class="nameitem">IPHONE X</p>
+                        <p style="font-size: 12px; margin-top: 2px;">Giá mặc định : 15.000.000 vnd</p>
+                        <div class="content-gia">
+                            <div class="gia">
+                                <p style="font-size: 12px; margin-top: 2px;">Max:</p>
+                                <p style="font-size: 14px; color:red; margin-top: 2px;"><b>19.000.000</b></p>
+                            </div>
+                            <div class="daugia">
+                                <p style="font-size: 12px;">Lượt ra giá: <b style="color :red">3</b></p>
+                                <p style="font-size: 12px;">Còn lại:<b style="color :red">1</b> ngày</p>
+                            </div>
+                        </div>
+                        <div class="daugiangay" style="
+    margin-bottom: 4px;
+">
+                            <button type="button" class="btn btn-warning" style="width: 100%; font-size: 12px;">Đấu giá ngay</button>
+                        </div>
+                        <div class="muangay">
+                            <button type="button" class="btn btn-danger" style="width: 100%; font-size: 12px;">Mua ngay: 300.000 vnd</button>
+                        </div>
+                    </div>
+                    <div class="component-item" style="width: 20%;height: 455px;float: left;padding: 5px;">
+                        <div clas="img" style="display: flex; justify-content: center; ">
+                            <img src="https://stcv4.hnammobile.com//uploads/products/colors/1/apple-iphone-x-256gb-99--5972814160-jpg.jpg" height="150px" width="auto">
+                        </div>
+                        <p class="nameitem">IPHONE X</p>
+                        <p style="font-size: 12px; margin-top: 2px;">Giá mặc định : 15.000.000 vnd</p>
+                        <div class="content-gia">
+                            <div class="gia">
+                                <p style="font-size: 12px; margin-top: 2px;">Max:</p>
+                                <p style="font-size: 14px; color:red; margin-top: 2px;"><b>19.000.000</b></p>
+                            </div>
+                            <div class="daugia">
+                                <p style="font-size: 12px;">Lượt ra giá: <b style="color :red">3</b></p>
+                                <p style="font-size: 12px;">Còn lại:<b style="color :red">1</b> ngày</p>
+                            </div>
+                        </div>
+                        <div class="daugiangay" style="
+    margin-bottom: 4px;
+">
+                            <button type="button" class="btn btn-warning" style="width: 100%; font-size: 12px;">Đấu giá ngay</button>
+                        </div>
+                        <div class="muangay">
+                            <button type="button" class="btn btn-danger" style="width: 100%; font-size: 12px;">Mua ngay: 300.000 vnd</button>
+                        </div>
+                    </div>
+                    <div class="component-item" style="width: 20%;height: 455px;float: left;padding: 5px;">
+                        <div clas="img" style="display: flex; justify-content: center; ">
+                            <img src="https://stcv4.hnammobile.com//uploads/products/colors/1/apple-iphone-x-256gb-99--5972814160-jpg.jpg" height="150px" width="auto">
+                        </div>
+                        <p class="nameitem">IPHONE X</p>
+                        <p style="font-size: 12px; margin-top: 2px;">Giá mặc định : 15.000.000 vnd</p>
+                        <div class="content-gia">
+                            <div class="gia">
+                                <p style="font-size: 12px; margin-top: 2px;">Max:</p>
+                                <p style="font-size: 14px; color:red; margin-top: 2px;"><b>19.000.000</b></p>
+                            </div>
+                            <div class="daugia">
+                                <p style="font-size: 12px;">Lượt ra giá: <b style="color :red">3</b></p>
+                                <p style="font-size: 12px;">Còn lại:<b style="color :red">1</b> ngày</p>
+                            </div>
+                        </div>
+                        <div class="daugiangay" style="
+    margin-bottom: 4px;
+">
+                            <button type="button" class="btn btn-warning" style="width: 100%; font-size: 12px;">Đấu giá ngay</button>
+                        </div>
+                        <div class="muangay">
+                            <button type="button" class="btn btn-danger" style="width: 100%; font-size: 12px;">Mua ngay: 300.000 vnd</button>
+                        </div>
+                    </div>
+                    <div class="component-item" style="width: 20%;height: 455px;float: left;padding: 5px;">
+                        <div clas="img" style="display: flex; justify-content: center; ">
+                            <img src="https://stcv4.hnammobile.com//uploads/products/colors/1/apple-iphone-x-256gb-99--5972814160-jpg.jpg" height="150px" width="auto">
+                        </div>
+                        <p class="nameitem">IPHONE X</p>
+                        <p style="font-size: 12px; margin-top: 2px;">Giá mặc định : 15.000.000 vnd</p>
+                        <div class="content-gia">
+                            <div class="gia">
+                                <p style="font-size: 12px; margin-top: 2px;">Max:</p>
+                                <p style="font-size: 14px; color:red; margin-top: 2px;"><b>19.000.000</b></p>
+                            </div>
+                            <div class="daugia">
+                                <p style="font-size: 12px;">Lượt ra giá: <b style="color :red">3</b></p>
+                                <p style="font-size: 12px;">Còn lại:<b style="color :red">1</b> ngày</p>
+                            </div>
+                        </div>
+                        <div class="daugiangay" style="
+    margin-bottom: 4px;
+">
+                            <button type="button" class="btn btn-warning" style="width: 100%; font-size: 12px;">Đấu giá ngay</button>
+                        </div>
+                        <div class="muangay">
+                            <button type="button" class="btn btn-danger" style="width: 100%; font-size: 12px;">Mua ngay: 300.000 vnd</button>
+                        </div>
+                    </div>
+                    <div class="component-item" style="width: 20%;height: 455px;float: left;padding: 5px;">
+                        <div clas="img" style="display: flex; justify-content: center; ">
+                            <img src="https://stcv4.hnammobile.com//uploads/products/colors/1/apple-iphone-x-256gb-99--5972814160-jpg.jpg" height="150px" width="auto">
+                        </div>
+                        <p class="nameitem">IPHONE X</p>
+                        <p style="font-size: 12px; margin-top: 2px;">Giá mặc định : 15.000.000 vnd</p>
+                        <div class="content-gia">
+                            <div class="gia">
+                                <p style="font-size: 12px; margin-top: 2px;">Max:</p>
+                                <p style="font-size: 14px; color:red; margin-top: 2px;"><b>19.000.000</b></p>
+                            </div>
+                            <div class="daugia">
+                                <p style="font-size: 12px;">Lượt ra giá: <b style="color :red">3</b></p>
+                                <p style="font-size: 12px;">Còn lại:<b style="color :red">1</b> ngày</p>
+                            </div>
+                        </div>
+                        <div class="daugiangay" style="
+    margin-bottom: 4px;
+">
+                            <button type="button" class="btn btn-warning" style="width: 100%; font-size: 12px;">Đấu giá ngay</button>
+                        </div>
+                        <div class="muangay">
+                            <button type="button" class="btn btn-danger" style="width: 100%; font-size: 12px;">Mua ngay: 300.000 vnd</button>
+                        </div>
+                    </div>
+                    <div class="component-item" style="width: 20%;height: 455px;float: left;padding: 5px;">
+                        <div clas="img" style="display: flex; justify-content: center; ">
+                            <img src="https://stcv4.hnammobile.com//uploads/products/colors/1/apple-iphone-x-256gb-99--5972814160-jpg.jpg" height="150px" width="auto">
+                        </div>
+                        <p class="nameitem">IPHONE X</p>
+                        <p style="font-size: 12px; margin-top: 2px;">Giá mặc định : 15.000.000 vnd</p>
+                        <div class="content-gia">
+                            <div class="gia">
+                                <p style="font-size: 12px; margin-top: 2px;">Max:</p>
+                                <p style="font-size: 14px; color:red; margin-top: 2px;"><b>19.000.000</b></p>
+                            </div>
+                            <div class="daugia">
+                                <p style="font-size: 12px;">Lượt ra giá: <b style="color :red">3</b></p>
+                                <p style="font-size: 12px;">Còn lại:<b style="color :red">1</b> ngày</p>
+                            </div>
+                        </div>
+                        <div class="daugiangay" style="
+    margin-bottom: 4px;
+">
+                            <button type="button" class="btn btn-warning" style="width: 100%; font-size: 12px;">Đấu giá ngay</button>
+                        </div>
+                        <div class="muangay">
+                            <button type="button" class="btn btn-danger" style="width: 100%; font-size: 12px;">Mua ngay: 300.000 vnd</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
