@@ -1,0 +1,86 @@
+//// AUCTION SYSTEM
+
+// Creating tables
+Table users {
+  user_id int [pk, increment] // auto-increment
+  full_name varchar(50)
+  username varchar(50)
+  hashpass varchar
+  address varchar(100)
+  dob datetime
+  email varchar(50) unique
+  type numeric
+}
+
+Table user_want_upgrade{
+  user_id int [pk]
+}
+Ref: user_want_upgrade.user_id > users.user_id
+
+//Table user
+
+Table categories {
+  cat_id int [pk, increment]
+  cat_name varchar(50)
+  cat_root int
+}
+Ref: categories.cat_root > categories.cat_id
+
+Table products {
+  product_id int [pk, increment]
+  name varchar(50)
+  starting_price int
+  price_step int
+  buy_now_price int
+  winner_id int
+  seller_id int
+  category_id int
+  posted_time datetime
+  end_time datetime
+  auto_remain_time boolean
+}
+Ref: products.seller_id > users.user_id
+Ref: products.category_id > categories.cat_id
+Ref: products.winner_id > users.user_id
+
+Table description{
+  product_id int [pk]
+  _time datetime [pk]
+  content varchar(500)
+}
+Ref: description.product_id > products.product_id
+
+Table watch_list{
+  user_id int [pk]
+  product_id int [pk]
+}
+Ref: watch_list.user_id > users.user_id
+Ref: watch_list.product_id > products.product_id
+
+Table evaluates{
+  user_id int [pk]
+  tar_user_id int [pk]
+  value int
+  eval_content varchar(100)
+}
+Ref: evaluates.user_id > users.user_id
+Ref: evaluates.tar_user_id > users.user_id
+
+Table offers{
+  product_id int [pk]
+  user_id int [pk]
+  _time datetime [pk]
+  money int
+}
+Ref: offers.product_id > products.product_id
+Ref: offers.user_id > users.user_id
+
+Table blocks{
+  product_id int [pk]
+  user_id int [pk]
+}
+
+Ref: blocks.product_id > products.product_id
+Ref: blocks.user_id > users.user_id
+
+
