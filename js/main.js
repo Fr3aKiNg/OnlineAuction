@@ -25,9 +25,12 @@ window.onload = function() {
     var itemViewTemplate = require("./itemViewTemplate.hbs");
     var uploadItemTemplate = require("./uploadItemTemplate.hbs");
     var profileTemplate = require("./profileTemplate.hbs");
-
+    var footerTemplate = require("./footerTemplate.hbs")
     try {
         createNavbar();
+    } catch (error) {}
+    try {
+        createFooter();
     } catch (error) {}
     try {
         createAdsBanner();
@@ -57,6 +60,11 @@ window.onload = function() {
     function createNavbar() {
         var template = document.getElementById("nav-bar");
         template.innerHTML = navbarTemplate();
+    }
+
+    function createFooter() {
+        var template = document.getElementById("footer");
+        template.innerHTML = footerTemplate();
     }
 
     function createAdsBanner() {
