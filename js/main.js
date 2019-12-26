@@ -13,10 +13,10 @@ window.onload = function() {
         createNavbar();
     } catch (error) {}
     try {
-        createFooter();
+        createAdsBanner();
     } catch (error) {}
     try {
-        createAdsBanner();
+        createFooter();
     } catch (error) {}
     try {
         createTopFive();
