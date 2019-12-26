@@ -98,3 +98,16 @@ ALTER TABLE `offers` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
 ALTER TABLE `blocks` ADD FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
 
 ALTER TABLE `blocks` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+
+CREATE TABLE `sessions` (
+  `session_id` varchar(128) COLLATE utf8mb4_bin NOT NULL,
+  `expires` int(11) unsigned NOT NULL,
+  `data` mediumtext COLLATE utf8mb4_bin,
+  PRIMARY KEY (`session_id`)
+);
+
+CREATE USER 'adminonlineaution'@'localhost' IDENTIFIED WITH mysql_native_password BY '@ution1234';
+GRANT ALL PRIVILEGES ON `onlineauction`.* TO 'adminonlineaution'@'localhost';
+
+/*DROP DATABASE `onlineauction`;*/
+
