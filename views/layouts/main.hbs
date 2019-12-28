@@ -253,12 +253,12 @@
                     {{#each lcCategories}}
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        {{CatName}}
+                        {{cat_name}}
                     </button>
                     <div class="dropdown-menu">
                         {{#if CatHaveSub}}
-                        {{#each lcSubCat}}
-                        <a class="dropdown-item" href="/products/byCat/{{CatID}}">{{CatName}}</a>
+                        {{#each subCats}}
+                        <a class="dropdown-item" href="/products/byCat/{{cat_id}}">{{cat_name}}</a>
                         {{/each}}
                         {{/if}}
                     </div>
