@@ -4,7 +4,7 @@ require('express-async-errors');
 const app = express();
 
 app.use(express.urlencoded({
-  extended: true
+    extended: true
 }));
 
 //Lien ket public chua cac file css, js, img
@@ -21,6 +21,6 @@ require('./middlewares/routes.mdw')(app);
 require('./middlewares/error.mdw')(app);
 
 const PORT = 3000;
-app.listen(PORT, function () {
-  console.log(`Server is running at http://localhost:${PORT}`);
+app.listen(PORT, function() {
+    console.log(`Server is running at http://localhost:${PORT}`);
 })
