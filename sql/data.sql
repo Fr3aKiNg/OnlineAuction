@@ -1,3 +1,5 @@
+use onlineauction;
+
 insert into categories (cat_name, cat_root) VALUES ('Điện thoại',null);
 insert into categories (cat_name, cat_root) VALUES ('Xe máy',null);
 insert into categories (cat_name, cat_root) VALUES ('Laptop',null);
