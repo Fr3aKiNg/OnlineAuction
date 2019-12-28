@@ -15,6 +15,7 @@ module.exports = function(app) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         //var product = await productModel.
             // console.log(JSON.stringify(categories));
 =======
@@ -22,6 +23,9 @@ module.exports = function(app) {
 >>>>>>> 4f8dcc6... category done/menu done mfk
 =======
         var product = await productModel.
+=======
+        //var product = await productModel.
+>>>>>>> 702810f... An chua lam xong ma lo commit chi3
             // console.log(JSON.stringify(categories));
 >>>>>>> a563e14... update cat
         res.render('home', {
