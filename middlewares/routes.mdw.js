@@ -9,8 +9,12 @@ module.exports = function(app) {
         // res.send('hello expressjs');
         var categories = await categoryModel.allWithSubCat();
 <<<<<<< HEAD
+<<<<<<< HEAD
         //var product = await productModel.
             // console.log(JSON.stringify(categories));
+=======
+        // console.log(JSON.stringify(categories));
+>>>>>>> 4f8dcc6... category done/menu done mfk
         res.render('home', {
             lcCategories: categories
         });
