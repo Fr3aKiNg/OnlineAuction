@@ -5,7 +5,11 @@ const router = express.Router();
 
 
 router.get('/', async function(req, res) {
+<<<<<<< HEAD
 
+=======
+    console.log('categories');
+>>>>>>> eb01852... Category almost done hahaha
     var categories = await categoryModel.allWithSubCat();
 
     res.render('../views/viewProduct/topFiveTemplate', {

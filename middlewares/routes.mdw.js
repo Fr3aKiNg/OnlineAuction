@@ -1,16 +1,25 @@
 const categoryModel = require('../models/category.model');
+<<<<<<< HEAD
 const productModel = require('../models/product.model');
+=======
+>>>>>>> eb01852... Category almost done hahaha
 
 module.exports = function(app) {
     app.get('/', async function(req, res) {
         // res.send('hello expressjs');
         var categories = await categoryModel.allWithSubCat();
+<<<<<<< HEAD
         //var product = await productModel.
             // console.log(JSON.stringify(categories));
         res.render('home', {
             lcCategories: categories
         });
         // res.render('../viewProduct/topFiveTemplate');
+=======
+        res.render('home', {
+            lcCategories: categories
+        });
+>>>>>>> eb01852... Category almost done hahaha
     })
 
     app.get('/about', function(req, res) {
