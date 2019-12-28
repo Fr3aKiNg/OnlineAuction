@@ -10,15 +10,33 @@ module.exports = {
         return db.load(sql);
     },
 
-    allWithSubCat: _ => {
-        cats = db.load('select * from categories where cat_root is null');
+    allWithSubCat: async function() {
+        cats = await db.load('select * from categories where cat_root is null');
+        // console.log(JSON.stringify(cats));
 
-        console.log(typeof cats);
-        for (var element in cats) {
-            element.subCats = db.load(`select * from categories where cat_root = ${element.cat_id}`);
-            element.CatHaveSub = (element.subCats.length > 0);
+        var catReturn = [];
+        // Object.keys(cats).forEach(async function(key) {
+
+        //     cats[key].subCats = await db.load(`select * from categories where cat_root = ${cats[key].cat_id}`);
+        //     cats[key].CatHaveSub = (cats[key].subCats.length > 0);
+        //     console.log(key, cats[key].CatHaveSub);
+        //     catReturn.push(cats[key]);
+        //     console.log(cats[key]);
+        //     console.log(catReturn);
+
+        // });
+
+        for (var key in cats) {
+            cats[key].subCats = await db.load(`select * from categories where cat_root = ${cats[key].cat_id}`);
+            cats[key].CatHaveSub = (cats[key].subCats.length > 0);
+            // console.log(key, cats[key].CatHaveSub);
+            catReturn.push(cats[key]);
+            // console.log(cats[key]);
+            // console.log(catReturn);
         }
-        return cats;
+        // console.log(catReturn);
+
+        return catReturn;
     },
 
     single: async id => {
