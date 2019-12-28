@@ -28,27 +28,34 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control md-10" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-light my-2 " type="submit" href="./itemSearch.html"
+                <button class="btn btn-outline-light" style="height: 38px;" type="submit" href="./itemSearch.html"
                     onclick="document.location='itemSearch.html';return false;"><i class="fas fa-search"></i></button>
             </form>
             <ul class="navbar-nav ml-auto">
+                {{#if isSignIn}}
                 <li class="nav-item active">
-                    <button class="btn btn-primary ml-1 mr-1" type="submit"><i
+                    <button class="btn btn-primary ml-1 mr-1 mt-1" type="submit"><i
                             class="fas fa-shopping-cart"></i></button>
                 </li>
+                <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" href="./uploadItem.html"
+                    onclick="document.location='uploadItem.html';return false;">Sell</button>
+                <li class="nav-item active">
+                    <button class="btn btn-primary ml-1 mr-1 mt-1" type="submit" href="./profileDetail.html"
+                        onclick="document.location='profileDetail.html';return false;"><i
+                            class="fas fa-user"></i></button>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-center" href="#signup" data-toggle="modal" data-target=".bs-modal-sm">Sign
+                        Out<span class="sr-only">(current)</span></a>
+                </li>
+                {{else}}
                 <button class="btn btn-outline-light my-2 my-sm-0" type="submit" href="#signup" data-toggle="modal"
                     data-target=".bs-modal-sm">Sign In</button>
                 <li class="nav-item active">
                     <a class="nav-link text-center" href="#signup" data-toggle="modal" data-target=".bs-modal-sm">Sign
                         Up<span class="sr-only">(current)</span></a>
                 </li>
-                <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" href="./uploadItem.html"
-                    onclick="document.location='uploadItem.html';return false;">Sell</button>
-                <li class="nav-item active">
-                    <button class="btn btn-primary ml-1 mr-1" type="submit" href="./profileDetail.html"
-                        onclick="document.location='profileDetail.html';return false;"><i
-                            class="fas fa-user"></i></button>
-                </li>
+                {{/if}}
             </ul>
 
         </div>
@@ -242,113 +249,118 @@
                 </div>
             </div>
     </div>
-    <div class="card mt-5 bg-primary text-white" style="width: 18rem;">
-        <div class="card-header text-center">
-            Categories
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item text-center">
-                <!-- Example split danger button -->
-                <div class=" btn-group dropright">
+    <div class="container mt-5 ">
+        <div class="row">
+            <div class="card bg-primary text-white col-2 " style="width: 13rem;">
+                <div class="card-header text-center">
+                    Categories
+                </div>
+                <ul class="list-group list-group-flush">
                     {{#each lcCategories}}
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        {{cat_name}}
-                    </button>
-                    <div class="dropdown-menu">
-                        {{#if CatHaveSub}}
-                        {{#each subCats}}
-                        <a class="dropdown-item" href="/products/byCat/{{cat_id}}">{{cat_name}}</a>
-                        {{/each}}
-                        {{/if}}
-                    </div>
+                    <li class="list-group-item text-center p-0">
+                        <!-- Example split danger button -->
+                        <div class=" btn-group dropright w-100">
+                            <button type="button" class="btn btn-primary dropdown-toggle w-100" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                {{cat_name}}
+                            </button>
+                            <div class="dropdown-menu">
+                                {{#if CatHaveSub}}
+                                {{#each subCats}}
+                                <a class="dropdown-item" href="/products/byCat/{{cat_id}}">{{cat_name}}</a>
+                                {{/each}}
+                                {{/if}}
+                            </div>
+                        </div>
+                    </li>
                     {{/each}}
+                </ul>
+            </div>
+            <div class="col-10">
+                <!-- Body -->
+                {{{body}}}
+            </div>
+        </div>
+        <!-- /Body -->
+
+        <!-- Footer -->
+        <footer class="page-footer font-small indigo">
+
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left">
+
+                <!-- Grid row -->
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 mx-auto">
+
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">ID</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#!">1753026</a>
+                            </li>
+                            <li>
+                                <a href="#!">1753032</a>
+                            </li>
+                            <li>
+                                <a href="#!">1753002</a>
+                            </li>
+                            <li>
+                                <a href="#!">1753062</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="clearfix w-100 d-md-none">
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 mx-auto">
+
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Name</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#!">Võ Quốc An</a>
+                            </li>
+                            <li>
+                                <a href="#!">Nguyễn Tất Bình</a>
+                            </li>
+                            <li>
+                                <a href="#!">Huỳnh Minh Chí</a>
+                            </li>
+                            <li>
+                                <a href="#!">Lê Minh Khang</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="clearfix w-100 d-md-none">
+
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+
                 </div>
-            </li>
-        </ul>
-    </div>
-    <!-- Body -->
-    {{{body}}}
-    <!-- /Body -->
-
-    <!-- Footer -->
-    <footer class="page-footer font-small indigo">
-
-        <!-- Footer Links -->
-        <div class="container text-center text-md-left">
-
-            <!-- Grid row -->
-            <div class="row">
-
-                <!-- Grid column -->
-                <div class="col-md-3 mx-auto">
-
-                    <!-- Links -->
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">ID</h5>
-
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="#!">1753026</a>
-                        </li>
-                        <li>
-                            <a href="#!">1753032</a>
-                        </li>
-                        <li>
-                            <a href="#!">1753002</a>
-                        </li>
-                        <li>
-                            <a href="#!">1753062</a>
-                        </li>
-
-                    </ul>
-
-                </div>
-                <!-- Grid column -->
-
-                <hr class="clearfix w-100 d-md-none">
-
-                <!-- Grid column -->
-                <div class="col-md-3 mx-auto">
-
-                    <!-- Links -->
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Name</h5>
-
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="#!">Võ Quốc An</a>
-                        </li>
-                        <li>
-                            <a href="#!">Nguyễn Tất Bình</a>
-                        </li>
-                        <li>
-                            <a href="#!">Huỳnh Minh Chí</a>
-                        </li>
-                        <li>
-                            <a href="#!">Lê Minh Khang</a>
-                        </li>
-                    </ul>
-
-                </div>
-                <!-- Grid column -->
-
-                <hr class="clearfix w-100 d-md-none">
-
-                <!-- Grid column -->
-
-                <!-- Grid column -->
+                <!-- Grid row -->
 
             </div>
-            <!-- Grid row -->
+            <!-- Footer Links -->
 
-        </div>
-        <!-- Footer Links -->
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2018 Copyright:
+                <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+            </div>
+            <!-- Copyright -->
 
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2018 Copyright:
-            <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-        </div>
-        <!-- Copyright -->
-
-    </footer>
-
+        </footer>
+    </div>
 </body>
