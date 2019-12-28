@@ -5,7 +5,7 @@ module.exports = function(app) {
     app.get('/', async function(req, res) {
         // res.send('hello expressjs');
         var categories = await categoryModel.allWithSubCat();
-        var product = await productModel.
+        //var product = await productModel.
             // console.log(JSON.stringify(categories));
         res.render('home', {
             lcCategories: categories
