@@ -1,6 +1,78 @@
-<div class="mt-2">
-    <p class="text-center font-weight-bold">Top 5 best price</p>
+{{!-- <div class="mt-2">
+    <p class="text-center font-weight-bold">Top 5 highest price</p>
     <div class="d-flex justify-content-between">
-
+        {{#each topHighestPrice}}
+        <div class="card" style="width: 220px;">
+            <img class="card-img-top cursor-pointer" src={{productSource}} alt="Card image cap" href="./itemDetail.html"
+                onclick="document.location='itemDetail.html';return false;">
+            <div class="card-body">
+                <h5 class="card-title">{{productTitle}}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Base price: <b class="float-right">${{basePrice}}</b></li>
+                <li class="list-group-item">Max price: <b class="float-right">${{maxPrice}}</b></li>
+                <li class="list-group-item">Bid: <b class="float-right">${{bidPrice}}</b></li>
+                <li class="list-group-item">Time remain: <b class="float-right">{{reaminTime}} days</b></li>
+            </ul>
+            <div class="card-body row justify-content-between">
+                <button type="button" class="btn btn-success col-6">Buy now</button>
+                <button type="button" class="btn btn-primary col-6">Bid now</button>
+            </div>
+        </div>
+        {{/each}}
     </div>
 </div>
+<div class="mt-2">
+    <p class="text-center font-weight-bold">Top 5 least time remain</p>
+    <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between">
+            {{#each topLeastTimeRemain}}
+            <div class="card" style="width: 220px;">
+                <img class="card-img-top cursor-pointer"
+                    src="./assets//items//0171ccc9b5276d1bca263d3d5af25cd0.jpg_200x200q80.jpg" alt="Card image cap"
+                    href="./itemDetail.html" onclick="document.location='itemDetail.html';return false;">
+                <div class="card-body">
+                    <h5 class="card-title">{{productTitle}}</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Base price: <b class="float-right">${{basePrice}}</b></li>
+                    <li class="list-group-item">Max price: <b class="float-right">${{maxPrice}}</b></li>
+                    <li class="list-group-item">Bid: <b class="float-right">${{bidPrice}}</b></li>
+                    <li class="list-group-item">Time remain: <b class="float-right">{{reaminTime}} days</b></li>
+                </ul>
+                <div class="card-body row justify-content-between">
+                    <button type="button" class="btn btn-success col-6">Buy now</button>
+                    <button type="button" class="btn btn-primary col-6">Bid now</button>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+<div class="mt-2">
+    <p class="text-center font-weight-bold">Top 5 bidding time</p>
+    <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between">
+            {{#each topBiddingProduct}}
+            <div class="card" style="width: 220px;">
+                <img class="card-img-top cursor-pointer"
+                    src="./assets//items//0171ccc9b5276d1bca263d3d5af25cd0.jpg_200x200q80.jpg" alt="Card image cap"
+                    href="./itemDetail.html" onclick="document.location='itemDetail.html';return false;">
+                <div class="card-body">
+                    <h5 class="card-title">{{productTitle}}</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Base price: <b class="float-right">${{basePrice}}</b></li>
+                    <li class="list-group-item">Max price: <b class="float-right">${{maxPrice}}</b></li>
+                    <li class="list-group-item">Bid: <b class="float-right">${{bidPrice}}</b></li>
+                    <li class="list-group-item">Time remain: <b class="float-right">{{reaminTime}} days</b></li>
+                </ul>
+                <div class="card-body row justify-content-between">
+                    <button type="button" class="btn btn-success col-6">Buy now</button>
+                    <button type="button" class="btn btn-primary col-6">Bid now</button>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div> --}}
