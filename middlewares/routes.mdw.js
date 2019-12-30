@@ -2,7 +2,6 @@ const categoryModel = require('../models/category.model');
 
 const productModel = require('../models/product.model');
 
-const productModel = require('../models/product.model');
 
 
 module.exports = function(app) {
