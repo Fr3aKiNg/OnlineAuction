@@ -33,7 +33,8 @@ CREATE TABLE `products` (
   `category_id` int,
   `posted_time` datetime,
   `end_time` datetime,
-  `auto_remain_time` boolean
+  `auto_remain_time` boolean,
+  `offer_price` int
 );
 
 CREATE TABLE `description` (
