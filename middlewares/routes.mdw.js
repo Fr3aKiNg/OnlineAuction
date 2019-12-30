@@ -14,9 +14,9 @@ module.exports = function(app) {
 
         // console.log(JSON.stringify(categories));
 
-        var product = await productModel.
-            //var product = await productModel.
-            // console.log(JSON.stringify(categories));
+        // var product = await productModel.
+        //var product = await productModel.
+        // console.log(JSON.stringify(categories));
         res.render('home', {
             lcCategories: categories
         });
