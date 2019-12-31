@@ -7,17 +7,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vietnam Trading</title>
-    <link rel="stylesheet" href="../../public/css/common.css">
+    {{!-- <link rel="stylesheet" href="../../public/css/common.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>--}}
     <script src="https://kit.fontawesome.com/446c699f3f.js" crossorigin="anonymous"></script>
-
+    <link href="../../public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../public/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../public/css/prettyPhoto.css" rel="stylesheet">
+    <link href="../../public/css/price-range.css" rel="stylesheet">
+    <link href="../../public/css/animate.css" rel="stylesheet">
+    <link href="../../public/css/main.css" rel="stylesheet">
+    <link href="../../public/css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="../../public/assets/39e7906b-2680-467f-a4df-f11389a3fe3b_200x200.ico" />
 </head>
 
 <body>
-    <nav class="fixed-top navbar navbar-expand-lg navbar-dark bg-primary">
+
+    <header id="header">
+        <!--header-->
+
+
+        <div class="header-middle">
+            <!--header-middle-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="logo pull-left">
+                            <a href="index.html"><img src="../../public/assets/logo.png" alt="" /></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="search_box pull-right">
+                            <input type="text" placeholder="Search" /><button
+                                class="btn btn-outline-light cursor-pointer"
+                                style="height: 35px;position:absolute; right: 40px;" type="submit" href="#"
+                                onclick="document.location='#';return false;"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="shop-menu pull-right">
+                            <ul class="nav navbar-nav">
+                                {{#if isAuth}}
+                                <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
+                                <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
+                                <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                                <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                                {{else}}
+                                <li onclick="location.href='./login';"><a><i class="fas fa-sign-in-alt"></i> Login</a>
+                                </li>
+                                {{/if}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/header-middle-->
+    </header>
+
+
+
+    {{{body}}}
+
+
+
+
+    {{!-- <nav class="fixed-top navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="./"><img src="http://localhost:3000/public/assets/logo.png" width="175"
                 height="50" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -256,8 +316,8 @@
                 <!-- Grid column -->
 
             </div>
-    </div>
-    <div class="container mt-5 ">
+    </div> --}}
+    {{!-- <div class="container mt-5 ">
         <div class="row">
             <div class="card bg-primary text-white col-2 " style="width: 13rem;">
                 <div class="card-header text-center">
@@ -364,5 +424,5 @@
             <!-- Copyright -->
 
         </footer>
-    </div>
+    </div> --}}
 </body>

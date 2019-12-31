@@ -9,15 +9,22 @@ module.exports = function(app) {
         // res.send('hello expressjs');
         var categories = await categoryModel.allWithSubCat();
 
-        var products = await productModel.getAlmostEndTime();
+        var LeastTimeRemain = await productModel.getAlmostEndTime();
+        var HighestPrice = await productModel.getHighestPrice();
+        var BiddingTurn = await productModel.getTopBiddingTurn();
 
-        console.log(JSON.stringify(products));
 
         res.render('home', {
             lcCategories: categories,
-            topLeastTimeRemain: products
+            topLeastTimeRemain: LeastTimeRemain,
+            topHighestPrice: HighestPrice,
+            topBiddingProduct: BiddingTurn
         });
         // res.render('../viewProduct/topFiveTemplate');
+    })
+
+    app.get('/login', function(req, res) {
+        res.render('login');
     })
 
     app.get('/about', function(req, res) {
