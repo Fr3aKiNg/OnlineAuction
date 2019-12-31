@@ -9,16 +9,13 @@ module.exports = function(app) {
         // res.send('hello expressjs');
         var categories = await categoryModel.allWithSubCat();
 
-        //var product = await productModel.
-        // console.log(JSON.stringify(categories));
+        var products = await productModel.getAlmostEndTime();
 
-        // console.log(JSON.stringify(categories));
+        console.log(JSON.stringify(products));
 
-        // var product = await productModel.
-        //var product = await productModel.
-        // console.log(JSON.stringify(categories));
         res.render('home', {
-            lcCategories: categories
+            lcCategories: categories,
+            topLeastTimeRemain: products
         });
         // res.render('../viewProduct/topFiveTemplate');
     })
