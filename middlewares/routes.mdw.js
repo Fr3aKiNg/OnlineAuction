@@ -24,7 +24,7 @@ module.exports = function(app) {
     })
 
     app.get('/login', function(req, res) {
-        res.render('login');
+        res.render('./viewAccount/login');
     })
 
     app.get('/about', function(req, res) {

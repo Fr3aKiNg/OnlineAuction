@@ -227,11 +227,11 @@
                     <h2 class="title text-center">Top 5 almost gone!!!</h2>
                     {{#each topLeastTimeRemain}}
                     <div class="col-sm-4">
-                        <div class="product-image-wrapper" onclick="location.href='./product/{{product_id}}';"
-                            style="cursor: pointer;">
+                        <div class="product-image-wrapper">
                             <div class=" single-products">
-                                <div class="productinfo text-center">
-                                    <img src="../public/assets/home/product1.jpg" alt="" />
+                                <div class="productinfo text-center cursor-pointer"
+                                    onclick="location.href='./product/{{product_id}}';">
+                                    <img class="product-img" src="../public/assets/home/product1.jpg" alt="" />
                                     <h2>${{currentPrice}}</h2>
                                     <p>{{name}}</p>
                                     <a href="#" class="btn btn-warning add-to-cart"><i class="fas fa-rocket"></i>Bid

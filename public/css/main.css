@@ -851,6 +851,22 @@ h2.title {
     border: 1px solid #F7F7F5;
     overflow: hidden;
     margin-bottom: 30px;
+    transition: 0.2s ease-in-out;
+}
+
+.product-image-wrapper:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25), 0 1px 20px rgba(0, 0, 0, 0.22);
+    z-index: 999;
+    transform: scale(1.05);
+}
+
+.product-img {
+    transition: all 0.2;
+}
+
+.product-image-wrapper:hover .product-img {
+    transform: scale(1.1);
+    transition: all 0.2;
 }
 
 .single-products {
@@ -891,6 +907,7 @@ h2.title {
 
 .productinfo {
     position: relative;
+    transition: 0.2s ease-in-out;
 }
 
 .product-overlay {
