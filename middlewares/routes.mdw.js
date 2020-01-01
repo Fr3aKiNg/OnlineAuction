@@ -23,10 +23,6 @@ module.exports = function(app) {
         // res.render('../viewProduct/topFiveTemplate');
     })
 
-    app.get('/login', function(req, res) {
-        res.render('./viewAccount/login');
-    })
-
     app.get('/about', function(req, res) {
         res.render('about');
     })
@@ -36,6 +32,7 @@ module.exports = function(app) {
             layout: false
         });
     })
-
+    
+    app.use('/account', require('../routes/_account.route'));
     app.use('/categories', require('../routes/category.route'));
 };
