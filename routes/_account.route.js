@@ -13,7 +13,6 @@ router.get('/login', async function(req, res) {
 })
 
 router.post('/login', async function(req, res) {
-    console.log("login");
     const user = await userModel.singleByUserName(req.body.username);
     if (user === null)
         return res.render('viewAccount/login', {
@@ -21,7 +20,7 @@ router.post('/login', async function(req, res) {
             err_message: 'Invalid username or password.'
         });
 
-    const rs = bcrypt.compareSync(req.body.password, user.password_hash);
+    const rs = bcrypt.compareSync(req.body.password, user.hashpass);
     if (rs === false)
         return res.render('viewAccount/login', {
             layout: false,
