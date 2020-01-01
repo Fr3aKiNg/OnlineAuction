@@ -23,8 +23,8 @@ module.exports = function(app) {
         // res.render('../viewProduct/topFiveTemplate');
     })
 
-    app.get('/login', function(req, res) {
-        res.render('./viewAccount/login');
+    app.get('/register', function(req, res) {
+        res.render('./viewAccount/register');
     })
 
     app.get('/about', function(req, res) {
