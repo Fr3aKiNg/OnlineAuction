@@ -42,7 +42,7 @@ module.exports.single = function(id) {
     p = db.load(`select p.product_id, p.name, 
     us.username as seller_name,
     uw.username as winner_name,
-    p.posted_time, p.end_time
+    p.posted_time, p.end_time6
     from products p, users us, users uw
     where p.product_id = ${id} and p.winner_id = uw.user_id and p.seller_id = us.user_id;
     `);
