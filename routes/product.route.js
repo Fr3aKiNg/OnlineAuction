@@ -7,6 +7,7 @@ const router = express.Router();
 
 router.get('/:id', async function(req, res) {
     const rows = await productModel.single(req.params.id);
+    console.log(JSON.stringify(rows[0]));
     res.render('viewProduct/product', {
         product: rows[0]
     })
