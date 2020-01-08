@@ -16,8 +16,8 @@ router.get('/:id', async function(req, res) {
     row.offer_price_string = numeral(row.offer_price).format('0,0');
 
     const offers = await productModel.offers(req.params.id);
-    for (o in offers) {
-        o._time = moment(o._time).format('LLL');
+    for (var i in offers) {
+        offers[i]._time = moment(offers[i]._time).format('LLL');
     }
     res.render('viewProduct/product', {
         product: row,
