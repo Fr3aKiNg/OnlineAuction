@@ -55,8 +55,7 @@ CREATE TABLE `evaluates` (
   `tar_user_id` int,
   `product_id` int,
   `value` int,
-  `eval_content` varchar(100),
-  PRIMARY KEY (`user_id`, `tar_user_id`)
+  `eval_content` varchar(100)
 );
 
 CREATE TABLE `offers` (
