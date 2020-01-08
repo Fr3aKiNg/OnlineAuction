@@ -40,19 +40,6 @@ module.exports = function(app) {
         // res.render('../viewProduct/topFiveTemplate');
     })
 
-    app.get('/product', async function(req, res) {
-        // res.send('hello expressjs');
-        var categories = await categoryModel.allWithSubCat();
-        var BiddingTurn = await productModel.getTopBiddingTurn(); //remember to change
-
-        res.render('product', {
-            lcCategories: categories,
-            topBiddingProduct: BiddingTurn
-        });
-        // res.render('../viewProduct/topFiveTemplate');
-    })
-
-
     app.get('/bs', function(req, res) {
         // res.sendFile(__dirname + '/bs.html');
         res.render('bs', {
@@ -62,4 +49,5 @@ module.exports = function(app) {
 
     app.use('/account', require('../routes/_account.route'));
     app.use('/categories', require('../routes/category.route'));
+    app.use('/product', require('../routes/product.route'));
 };

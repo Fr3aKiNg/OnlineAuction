@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.get('/:id', async function (req, res) {
     const rows = await productModel.single(req.params.id);
-    res.render('vwProducts/product', {
+    res.render('vwProduct/product', {
       product: rows[0]
     })
 })
