@@ -69,21 +69,21 @@ insert into blocks (product_id,user_id) values (4,1);
 
 insert into user_want_upgrade (user_id) values (2);
 
-insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (3, 5, 28, -1, 'hàng không được tốt như quảng cáo');
-insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (3, 4, 28, -1, 'hàng không được tốt như quảng cáo');
-insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (3, 5, 40, -1, 'hàng không được tốt như quảng cáo');
-insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (1, 5, 12, -1, 'hàng không được tốt như quảng cáo');
-insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (3, 4, 12, -1, 'hàng không được tốt như quảng cáo');
-insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (1, 5, 32, -1, 'hàng không được tốt như quảng cáo');
-insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (2, 4, 11, -1, 'hàng không được tốt như quảng cáo');
-insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (3, 5, 18, -1, 'hàng không được tốt như quảng cáo');
-insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (3, 4, 12, -1, 'hàng không được tốt như quảng cáo');
-insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (2, 5, 20, -1, 'hàng không được tốt như quảng cáo');
-insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (2, 4, 13, -1, 'hàng không được tốt như quảng cáo');
-insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (5, 4, 9, -1, 'hàng không được tốt như quảng cáo');
-insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 5, 16, -1, 'hàng không được tốt như quảng cáo');
-insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (3, 4, 4, -1, 'hàng không được tốt như quảng cáo');
-insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 5, 20, -1, 'hàng không được tốt như quảng cáo');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (3, 5, 28, 0, 'hàng không được tốt như quảng cáo');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (3, 4, 28, 0, 'hàng không được tốt như quảng cáo');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (3, 5, 40, 0, 'hàng không được tốt như quảng cáo');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (1, 5, 12, 0, 'hàng không được tốt như quảng cáo');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (3, 4, 12, 0, 'hàng không được tốt như quảng cáo');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (1, 5, 32, 0, 'hàng không được tốt như quảng cáo');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (2, 4, 11, 0, 'hàng không được tốt như quảng cáo');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (3, 5, 18, 0, 'hàng không được tốt như quảng cáo');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (3, 4, 12, 0, 'hàng không được tốt như quảng cáo');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (2, 5, 20, 0, 'hàng không được tốt như quảng cáo');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (2, 4, 13, 0, 'hàng không được tốt như quảng cáo');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (5, 4, 9, 0, 'hàng không được tốt như quảng cáo');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 5, 16, 0, 'hàng không được tốt như quảng cáo');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (3, 4, 4, 0, 'hàng không được tốt như quảng cáo');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 5, 20, 0, 'hàng không được tốt như quảng cáo');
 insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (1, 5, 11, 1, 'Sản phẩm này vô cùng tuyệt vời');
 insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (1, 5, 21, 1, 'Sản phẩm này vô cùng tuyệt vời');
 insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (2, 4, 4, 1, 'Sản phẩm này vô cùng tuyệt vời');
@@ -251,6 +251,49 @@ insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) va
 insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (1, 4, 25, 1, 'Sản phẩm này vô cùng tuyệt vời');
 insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (3, 4, 17, 1, 'Sản phẩm này vô cùng tuyệt vời');
 insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 5, 29, 1, 'Sản phẩm này vô cùng tuyệt vời');
+
+-- nguoi ban danh gia nguoi thang
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 1, 1, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 2, 2, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 5, 5, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 2, 6, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 3, 10, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 1, 13, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 3, 15, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 3, 18, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 1, 20, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 1, 21, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 2, 22, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 2, 26, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 2, 27, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 3, 30, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 1, 33, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 1, 34, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 2, 37, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 2, 36, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (4, 3, 38, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (5, 1, 3, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (5, 3, 4, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (5, 2, 7, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (5, 3, 8, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (5, 4, 9, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (5, 4, 11, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (5, 4, 12, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (5, 1, 14, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (5, 2, 16, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (5, 2, 17, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (5, 4, 19, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (5, 1, 23, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (5, 3, 24, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (5, 4, 25, 1, 'Người mua tốt bụng');
+
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (5, 3, 28, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (5, 4, 29, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (5, 4, 31, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (5, 4, 32, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (5, 3, 35, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (5, 4, 39, 1, 'Người mua tốt bụng');
+insert into evaluates (user_id, tar_user_id, product_id, value, eval_content) values (5, 1, 40, 1, 'Người mua tốt bụng');
 
 
 insert into watch_list (user_id,product_id) values (1,1);
