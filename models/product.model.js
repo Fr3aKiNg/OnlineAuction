@@ -44,7 +44,10 @@ module.exports.single = async function(id) {
     uw.username as winner_name,
     p.posted_time, p.end_time,
     p.seller_id AS seller_id,
-    p.winner_id AS winner_id
+    p.winner_id AS winner_id,
+    p.price_step AS price_step,
+    p.buy_now_price AS buy_now_price,
+    p.offer_price AS offer_price
     from products p, users us, users uw
     where p.product_id = ${id} and p.winner_id = uw.user_id and p.seller_id = us.user_id;
     `);
@@ -57,6 +60,5 @@ module.exports.single = async function(id) {
     p[0].rate_winner = p[0].rate_winner[0].rate_winner;
     if (p[0].rate_winner === null) p[0].rate_winner = 100;
 
-    console.log(p[0]);
     return p[0];
 };
