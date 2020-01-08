@@ -3,7 +3,14 @@ const config = require('../config/default.json');
 
 module.exports = {
     all: _ => db.load('select * from products'),
-    single: id => db.load(`select * from products where product = ${id}`),
+    single: id => db.load(`select p.product_id, p.name, 
+    us.username as seller_name, (sum(es.value) * 100 / count(*)) as rate_seller, 
+    uw.username as winner_name, (sum(ew.value) * 100 / count(*)) as rate_winner,
+    p.posted_time, p.end_time
+    from products p, users us, users uw, evaluates es, evaluates ew
+    where p.product_id = ${id} and p.winner_id = uw.user_id and p.seller_id = us.user_id and es.tar_user_id = us.user_id and ew.tar_user_id = uw.user_id
+    group by p.product_id, p.name, us.username, uw.username, p.posted_time, p.end_time;`),
+    
     allByCat: catId => db.load(`select * from products where category_id = ${catId}`),
     countByCat: async catId => {
         const rows = await db.load(`select count(*) as total from products where category_id = ${catId}`)
