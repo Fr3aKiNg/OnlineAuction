@@ -179,7 +179,7 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-sm-3" style="position: -webkit-sticky; position: sticky; top: 20px;">
+            <div class="col-sm-3" style="top: 20px;">
                 <div class="left-sidebar">
                     <h2>Category</h2>
                     <div class="panel-group category-products" id="accordian">
@@ -233,7 +233,24 @@
                                     onclick="location.href='./product/{{product_id}}';">
                                     <img class="product-img" src="../public/assets/home/product1.jpg" alt="" />
                                     <h2>${{currentPrice}}</h2>
-                                    <p>{{name}}</p>
+                                    <p style="font-weight: bold; font-size: 1.75rem;">{{name}}</p>
+                                    <table class="table table-responsive" style="margin: 0;border:none">
+                                        <tr>
+                                            <td align="center">
+                                                <p>{{bidderName}} bidded!</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center">
+                                                <p>{{bidTurn}} turns left!</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center">
+                                                <p>{{timeRemain}} remain!</p>
+                                            </td>
+                                        </tr>
+                                    </table>
                                     <a href="#" class="btn btn-warning add-to-cart"><i class="fas fa-rocket"></i>Bid
                                         now</a>
                                 </div>
@@ -248,6 +265,13 @@
                                     to cart</a>
                             </div>
                         </div> --}}
+                                {{!-- <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Base price: <b class="float-right">$150</b></li>
+                                    <li class="list-group-item">Max price: <b class="float-right">$200</b></li>
+                                    <li class="list-group-item">Bid: <b class="float-right">$168</b></li>
+                                    <li class="list-group-item">Time remain: <b class="float-right">2 days</b></li>
+                                </ul> --}}
+
                                 <img src="../public/assets/home/new.png" class="new" alt="" />
                             </div>
                             <div class="choose">
@@ -269,7 +293,25 @@
                                 <div class="productinfo text-center">
                                     <img src="../public/assets/home/product1.jpg" alt="" />
                                     <h2>${{currentPrice}}</h2>
-                                    <p>{{name}}</p>
+
+                                    <p style="font-weight: bold; font-size: 1.75rem;">{{name}}</p>
+                                    <table class="table table-responsive" style="margin: 0;border:none">
+                                        <tr>
+                                            <td align="center">
+                                                <p>{{bidderName}} bidded!</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center">
+                                                <p>{{bidTurn}} turns left!</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center">
+                                                <p>{{timeRemain}} remain!</p>
+                                            </td>
+                                        </tr>
+                                    </table>
                                     <a href="#" class="btn btn-warning add-to-cart"><i class="fas fa-rocket"></i>Bid
                                         now</a>
                                 </div>
@@ -304,7 +346,24 @@
                                 <div class="productinfo text-center">
                                     <img src="../public/assets/home/product1.jpg" alt="" />
                                     <h2>${{currentPrice}}</h2>
-                                    <p>{{name}}</p>
+                                    <p style="font-weight: bold; font-size: 1.75rem;">{{name}}</p>
+                                    <table class="table table-responsive" style="margin: 0;border:none">
+                                        <tr>
+                                            <td align="center">
+                                                <p>{{bidderName}} bidded!</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center">
+                                                <p>{{bidTurn}} turns left!</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center">
+                                                <p>{{timeRemain}} remain!</p>
+                                            </td>
+                                        </tr>
+                                    </table>
                                     <a href="#" class="btn btn-warning add-to-cart"><i class="fas fa-rocket"></i>Bid
                                         now</a>
                                 </div>
