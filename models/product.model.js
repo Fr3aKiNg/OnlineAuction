@@ -17,7 +17,7 @@ module.exports = {
     getHighestPrice: _ => db.load('SELECT p.product_id as product_id, p.name as name, \
     u.username AS winner_username, p.offer_price AS offer_price, p.end_time AS end_time, COUNT(*) AS count_offers\
     FROM products p, users u, offers o\
-    WHERE o.product_id = p.product_id AND end_time > CURRENT_TIMESTAMP()\
+    WHERE o.product_id = p.product_id AND u.user_id = p.winner_id AND end_time > CURRENT_TIMESTAMP()\
     GROUP BY p.product_id, p.name, u.username, p.offer_price, p.end_time\
     ORDER BY p.offer_price\
     LIMIT 5;'),
@@ -25,7 +25,7 @@ module.exports = {
     getAlmostEndTime: _ => db.load('SELECT p.product_id as product_id, p.name as name, \
     u.username AS winner_username, p.offer_price AS offer_price, p.end_time AS end_time, COUNT(*) AS count_offers\
     FROM products p, users u, offers o\
-    WHERE o.product_id = p.product_id AND end_time > CURRENT_TIMESTAMP()\
+    WHERE o.product_id = p.product_id AND u.user_id = p.winner_id AND end_time > CURRENT_TIMESTAMP()\
     GROUP BY p.product_id, p.name, u.username, p.offer_price, p.end_time\
     ORDER BY p.end_time\
     LIMIT 5;'),
@@ -33,7 +33,7 @@ module.exports = {
     getTopBiddingTurn: _ => db.load('SELECT p.product_id as product_id, p.name as name, \
     u.username AS winner_username, p.offer_price AS offer_price, p.end_time AS end_time, COUNT(*) AS count_offers\
     FROM products p, users u, offers o\
-    WHERE o.product_id = p.product_id AND end_time > CURRENT_TIMESTAMP()\
+    WHERE o.product_id = p.product_id AND u.user_id = p.winner_id AND end_time > CURRENT_TIMESTAMP()\
     GROUP BY p.product_id, p.name, u.username, p.offer_price, p.end_time\
     ORDER BY (select count(*) from offers o where p.product_id = o.product_id) DESC  LIMIT 5;'),
 };
