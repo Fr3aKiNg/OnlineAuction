@@ -37,33 +37,9 @@
             <!--header-middle-->
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-2">
+                    <div class="col-sm-12">
                         <div class="logo pull-left">
                             <a href="http://localhost:3000/"><img src="../../public/assets/logo.png" alt="" /></a>
-                        </div>
-                    </div>
-                    <div class="col-sm-5">
-                        <div class="search_box pull-right">
-                            <input type="text" placeholder="Search" /><button
-                                class="btn btn-outline-light cursor-pointer"
-                                style="height: 35px;position:absolute; right: 40px;" type="submit" href="#"
-                                onclick="document.location='#';return false;"><i class="fa fa-search"></i></button>
-                        </div>
-                    </div>
-                    <div class="col-sm-5">
-                        <div class="shop-menu pull-right">
-                            <ul class="nav navbar-nav">
-                                {{#if isAuth}}
-                                <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-                                <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-                                <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                                <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                                {{else}}
-                                <li onclick="location.href='./login';"><a class="cursor-pointer"><i
-                                            class="fas fa-sign-in-alt"></i> Login</a>
-                                </li>
-                                {{/if}}
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -71,6 +47,7 @@
         </div>
         <!--/header-middle-->
     </header>
+
 
     <section id="form">
         <!--form-->
@@ -85,7 +62,7 @@
                     <div class="signup-form">
                         <!--sign up form-->
                         <h2>New User Sign up!</h2>
-                        <form action="POST">
+                        <form method="POST">
 
                             <input type="text" placeholder="Name" name="name" />
                             <input type="date" id="start" name="trip-start">

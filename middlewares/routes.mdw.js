@@ -26,13 +26,40 @@ module.exports = function(app) {
     app.get('/about', function(req, res) {
         res.render('about');
     })
+
+    app.get('/search', async function(req, res) {
+        // res.send('hello expressjs');
+        var categories = await categoryModel.allWithSubCat();
+        var BiddingTurn = await productModel.getTopBiddingTurn(); //remember to change
+
+
+        res.render('search', {
+            lcCategories: categories,
+            topBiddingProduct: BiddingTurn
+        });
+        // res.render('../viewProduct/topFiveTemplate');
+    })
+
+    app.get('/product', async function(req, res) {
+        // res.send('hello expressjs');
+        var categories = await categoryModel.allWithSubCat();
+        var BiddingTurn = await productModel.getTopBiddingTurn(); //remember to change
+
+        res.render('product', {
+            lcCategories: categories,
+            topBiddingProduct: BiddingTurn
+        });
+        // res.render('../viewProduct/topFiveTemplate');
+    })
+
+
     app.get('/bs', function(req, res) {
         // res.sendFile(__dirname + '/bs.html');
         res.render('bs', {
             layout: false
         });
     })
-    
+
     app.use('/account', require('../routes/_account.route'));
     app.use('/categories', require('../routes/category.route'));
 };
