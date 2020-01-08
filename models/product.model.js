@@ -38,17 +38,25 @@ module.exports = {
     ORDER BY (select count(*) from offers o where p.product_id = o.product_id) DESC  LIMIT 5;'),
 };
 
-module.exports.single = function(id) {
-    p = db.load(`select p.product_id, p.name, 
+module.exports.single = async function(id) {
+    p = await db.load(`select p.product_id, p.name, 
     us.username as seller_name,
     uw.username as winner_name,
-    p.posted_time, p.end_time6
+    p.posted_time, p.end_time,
+    p.seller_id AS seller_id,
+    p.winner_id AS winner_id
     from products p, users us, users uw
     where p.product_id = ${id} and p.winner_id = uw.user_id and p.seller_id = us.user_id;
     `);
 
-    p.rate_seller = db.load(`select (sum(e.value) * 100 / count(*)) as rate_seller from evaluates e WHERE e.tar_user_id = ${p.seller_id};`);
-    p.rate_winner = db.load(`select (sum(e.value) * 100 / count(*)) as rate_seller from evaluates e WHERE e.tar_user_id = ${p.winner_id};`);
+    p[0].rate_seller = await db.load(`select (sum(e.value) * 100 / count(*)) as rate_seller from evaluates e WHERE e.tar_user_id = ${p[0].seller_id};`);
+    p[0].rate_seller = p[0].rate_seller[0].rate_seller;
+    if (p[0].rate_seller === null) p[0].rate_seller = 100;
 
-    return p;
+    p[0].rate_winner = await db.load(`select (sum(e.value) * 100 / count(*)) as rate_winner from evaluates e WHERE e.tar_user_id = ${p[0].winner_id};`);
+    p[0].rate_winner = p[0].rate_winner[0].rate_winner;
+    if (p[0].rate_winner === null) p[0].rate_winner = 100;
+
+    console.log(p[0]);
+    return p[0];
 };
