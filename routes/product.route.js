@@ -6,10 +6,10 @@ const router = express.Router();
 
 
 router.get('/:id', async function(req, res) {
-    const rows = await productModel.single(req.params.id);
-    console.log(JSON.stringify(rows[0]));
+    const row = await productModel.single(req.params.id);
+    console.log(JSON.stringify(row));
     res.render('viewProduct/product', {
-        product: rows[0]
+        product: row
     })
 })
 
