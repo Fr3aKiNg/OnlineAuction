@@ -40,12 +40,12 @@ module.exports = function(app) {
         // res.render('../viewProduct/topFiveTemplate');
     })
 
-    app.get('/product', async function(req, res) {
+    app.get('/viewProduct/product', async function(req, res) {
         // res.send('hello expressjs');
         var categories = await categoryModel.allWithSubCat();
         var BiddingTurn = await productModel.getTopBiddingTurn(); //remember to change
 
-        res.render('product', {
+        res.render('/product', {
             lcCategories: categories,
             topBiddingProduct: BiddingTurn
         });

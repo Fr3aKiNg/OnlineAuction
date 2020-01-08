@@ -45,24 +45,41 @@
                         <div class="product-information">
                             <!--/product-information-->
                             <img src="images/product-details/new.jpg" class="newarrival" alt="" />
-                            <h2>Anne Klein Sleeveless Colorblock Scuba</h2>
-                            <p>Web ID: 1089772</p>
+                            <h2>{{bidItem}}</h2>
                             <img src="#" alt="" />
                             <span>
-                                <span>{{currentPrice}}</span>
+                                <span>Current Price: {{currentPrice}}</span>
+                                <span>Buy Now: {{buyNowPrice}}</span>
                                 <tr>
-                                    <td align="center">
-                                        <p>{{bidderName}} bidded!</p>
+                                    <td align="left">
+                                        <p>Seller: {{sellerName}}</p>
+                                    </td>
+                                    <td align="right">
+                                        <p>{{sellerRating}}</p>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td align="center">
-                                        <p>{{bidTurn}} turns left!</p>
+                                    <td align="left">
+                                        <p>Highest bidder: {{bidderName}}</p>
+                                    </td>
+                                    <td align="right">
+                                        <p>{{bidderRating}}</p>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td align="center">
-                                        <p>{{timeRemain}} remain!</p>
+                                    <td align="left">
+                                        <p>Upload time: </p>
+                                    </td>
+                                    <td align="right">
+                                        <p>{{uploadTime}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left">
+                                        <p>Time Remain: </p>
+                                    </td>
+                                    <td align="right">
+                                        <p>{{reamainTime}}</p>
                                     </td>
                                 </tr>
                                 <button type="button" class="btn btn-fefault cart">
