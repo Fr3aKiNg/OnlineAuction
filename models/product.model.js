@@ -15,7 +15,7 @@ module.exports = {
 
         p.rate_seller = db.load(`select (sum(e.value) * 100 / count(*)) as rate_seller from evaluates e WHERE e.tar_user_id = ${p.seller_id};`);
         p.rate_winner = db.load(`select (sum(e.value) * 100 / count(*)) as rate_seller from evaluates e WHERE e.tar_user_id = ${p.winner_id};`);
-        
+
         return p;
     },
     offers: id => db.load(`select o._time, u.username, o.money from offers o, users u where o.user_id = o.user_id and o.product_id = ${id}`),
@@ -27,7 +27,7 @@ module.exports = {
         return rows[0].total;
     },
     pageByCat: (catId, offset) => db.load(`select * from products where category_id = ${catId} limit ${config.pagination.limit} offset ${offset}`),
-    
+
     getHighestPrice: _ => db.load('SELECT p.product_id as product_id, p.name as name, \
     u.username AS winner_username, p.offer_price AS offer_price, p.end_time AS end_time, COUNT(*) AS count_offers\
     FROM products p, users u, offers o\
