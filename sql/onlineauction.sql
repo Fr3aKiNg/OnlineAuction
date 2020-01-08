@@ -53,9 +53,9 @@ CREATE TABLE `watch_list` (
 CREATE TABLE `evaluates` (
   `user_id` int,
   `tar_user_id` int,
+  `product_id` int,
   `value` int,
-  `eval_content` varchar(100),
-  PRIMARY KEY (`user_id`, `tar_user_id`)
+  `eval_content` varchar(100)
 );
 
 CREATE TABLE `offers` (
@@ -91,6 +91,8 @@ ALTER TABLE `watch_list` ADD FOREIGN KEY (`product_id`) REFERENCES `products` (`
 ALTER TABLE `evaluates` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
 
 ALTER TABLE `evaluates` ADD FOREIGN KEY (`tar_user_id`) REFERENCES `users` (`user_id`);
+
+ALTER TABLE `evaluates` ADD FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
 
 ALTER TABLE `offers` ADD FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
 
