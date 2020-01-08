@@ -2,6 +2,8 @@ const categoryModel = require('../models/category.model');
 
 const productModel = require('../models/product.model');
 
+const moment = require('moment')
+const numeral = require('numeral')
 
 
 module.exports = function(app) {
@@ -12,6 +14,12 @@ module.exports = function(app) {
         var LeastTimeRemain = await productModel.getAlmostEndTime();
         var HighestPrice = await productModel.getHighestPrice();
         var BiddingTurn = await productModel.getTopBiddingTurn();
+
+        for (var i in LeastTimeRemain) {
+            LeastTimeRemain[i].end_time = moment(LeastTimeRemain[i].end_time).format('LLL');
+            console.log(LeastTimeRemain[i].end_time.valueOf() - Date.now());
+            console.log(Date.now());
+        }
 
 
         res.render('home', {
