@@ -45,20 +45,20 @@
                         <div class="product-information">
                             <!--/product-information-->
                             <img src="images/product-details/new.jpg" class="newarrival" alt="" />
-                            <div>
-                                <h1>{{product.name}}</h1>
-                                <button type="button" class="btn btn-fefault cart" style="margin: 0;">
+                            <div style="height: inherit;">
+                                <h1 style="float: left;">{{product.name}}</h1>
+                                <button type="button" class="btn btn-fefault cart" style="margin: 20px;">
                                     <a href="#" style="color: white;"><i class="fa fa-plus-square"
                                             style="margin-right: 9px; color: white;"></i>Add to
                                         watchlist</a>
                                 </button>
-                            </div>
+                            </div s>
 
                             <span>
                                 <table class="table table-responsive" style="margin: 0;border:none">
                                     <tr>
                                         <td align="left">
-                                            <span>${{product.currentPrice}}</span>
+                                            <span>${{product.offer_price}}</span>
                                         </td>
                                         <td align="right">
                                             <span></span>
@@ -66,26 +66,34 @@
                                     </tr>
                                     <tr>
                                         <td align="left">
+                                            <p>Price step: </p>
+                                        </td>
+                                        <td align="right">
+                                            <p>${{product.price_step}}</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">
                                             <p>Buy Now: </p>
                                         </td>
                                         <td align="right">
-                                            <p>${{product.buyNowPrice}}</p>
+                                            <p>${{product.buy_now_price}}</p>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td align="left">
-                                            <p>Seller: {{product.sellerName}}</p>
+                                            <p>Seller: {{product.seller_name}}</p>
                                         </td>
                                         <td align="right">
-                                            <p>{{product.sellerRating}}</p>
+                                            <p>{{product.rate_seller}}</p>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td align="left">
-                                            <p>Highest bidder: {{product.bidderName}}</p>
+                                            <p>Highest bidder: {{product.winner_name}}</p>
                                         </td>
                                         <td align="right">
-                                            <p>{{product.bidderRating}}</p>
+                                            <p>{{product.rate_winner}}</p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -93,15 +101,15 @@
                                             <p>Upload time: </p>
                                         </td>
                                         <td align="right">
-                                            <p>{{product.uploadTime}}</p>
+                                            <p>{{product.posted_time}}</p>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td align="left">
-                                            <p>Time Remain: </p>
+                                            <p>End time: </p>
                                         </td>
                                         <td align="right">
-                                            <p>{{product.remainTime}}</p>
+                                            <p>{{product.end_time}}</p>
                                         </td>
                                     </tr>
                                 </table>
