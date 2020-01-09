@@ -8,11 +8,6 @@ module.exports = {
 
     allByCat: catId => db.load(`select * from products where category_id = ${catId}`),
 
-    countByCat: async catId => {
-        const rows = await db.load(`select count(*) as total from products where category_id = ${catId}`)
-        return rows[0].total;
-    },
-
     getHighestPrice: _ => db.load('SELECT p.product_id as product_id, p.name as name, \
     u.username AS winner_username, p.offer_price AS offer_price, p.end_time AS end_time, p.posted_time AS posted_time, COUNT(*) AS count_offers\
     FROM (products p JOIN users u ON u.user_id = p.winner_id) LEFT JOIN offers o ON o.product_id = p.product_id \
@@ -64,7 +59,35 @@ module.exports.single = async function(id) {
 
 module.exports.pageByCatAndSearchString = async function(catId, offset, search_string){
     if (catId === undefined)
-        return db.load(`select * from products where name LIKE '%${search_string}%' and end_time > CURRENT_TIMESTAMP() limit ${config.pagination.limit} offset ${offset}`);
-
-    return db.load(`select * from products where name LIKE '%${search_string}%' and end_time > CURRENT_TIMESTAMP() and category_id = ${catId} limit ${config.pagination.limit} offset ${offset}`)
+        return db.load(`SELECT p.product_id as product_id, p.name as name, \
+        u.username AS winner_username, p.offer_price AS offer_price, p.end_time AS end_time, p.posted_time AS posted_time, COUNT(*) AS count_offers \
+        FROM (products p JOIN users u ON u.user_id = p.winner_id) LEFT JOIN offers o ON o.product_id = p.product_id \
+        WHERE end_time > CURRENT_TIMESTAMP() AND p.name LIKE '%${search_string}%' \
+        GROUP BY p.product_id, p.name, u.username, p.offer_price, p.end_time, p.posted_time \
+        limit ${config.pagination.limit} offset ${offset}`);
+    
+    return db.load(`SELECT p.product_id as product_id, p.name as name, \
+    u.username AS winner_username, p.offer_price AS offer_price, p.end_time AS end_time, p.posted_time AS posted_time, COUNT(*) AS count_offers \
+    FROM (products p JOIN users u ON u.user_id = p.winner_id) LEFT JOIN offers o ON o.product_id = p.product_id \
+    WHERE end_time > CURRENT_TIMESTAMP() AND p.name LIKE '%${search_string}%' AND category_id = ${catId} \
+    GROUP BY p.product_id, p.name, u.username, p.offer_price, p.end_time, p.posted_time \
+    limit ${config.pagination.limit} offset ${offset}`);
 };
+
+module.exports.countByCatAndSearchString = async function(catId, offset, search_string){
+    if (catId === undefined)
+        return db.load(`SELECT p.product_id as product_id, p.name as name, \
+        u.username AS winner_username, p.offer_price AS offer_price, p.end_time AS end_time, p.posted_time AS posted_time, COUNT(*) AS count_offers \
+        FROM (products p JOIN users u ON u.user_id = p.winner_id) LEFT JOIN offers o ON o.product_id = p.product_id \
+        WHERE end_time > CURRENT_TIMESTAMP() AND p.name LIKE '%${search_string}%' \
+        GROUP BY p.product_id, p.name, u.username, p.offer_price, p.end_time, p.posted_time \
+        limit ${config.pagination.limit} offset ${offset}`);
+
+    return db.load(`SELECT p.product_id as product_id, p.name as name, \
+    u.username AS winner_username, p.offer_price AS offer_price, p.end_time AS end_time, p.posted_time AS posted_time, COUNT(*) AS count_offers \
+    FROM (products p JOIN users u ON u.user_id = p.winner_id) LEFT JOIN offers o ON o.product_id = p.product_id \
+    WHERE end_time > CURRENT_TIMESTAMP() AND p.name LIKE '%${search_string}%' AND category_id = ${catId} \
+    GROUP BY p.product_id, p.name, u.username, p.offer_price, p.end_time, p.posted_time \
+    limit ${config.pagination.limit} offset ${offset}`);
+};
+
