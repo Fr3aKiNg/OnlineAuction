@@ -67,7 +67,7 @@ router.post('/register', async function(req, res) {
     }
     const ret = await userModel.add(entity);
     
-    res.redirect(req.headers.referer);
+    res.redirect('/');
 })
 
 /*router.get('/is-available', async function(req, res) {
