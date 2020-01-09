@@ -71,6 +71,7 @@ module.exports = function(app) {
         var products = await productModel.pageByCatAndSearchString(req.query.catID, req.query.page, req.query.searchString);
         var numProduct = await productModel.countByCatAndSearchString(req.query.catID, req.query.page, req.query.searchString);
         var numPage = Math.ceil(numProduct / config.pagination.limit);
+        var catName = await categoryModel.single(catID);
 
         res.render('search', {
             lcCategories: categories,
@@ -78,7 +79,8 @@ module.exports = function(app) {
             searchName: req.query.searchString,
             catID: req.query.catID,
             curPage: req.query.page,
-            numPage: numPage
+            numPage: numPage,
+            catName: catName
         });
         // res.render('../viewProduct/topFiveTemplate');
     })
