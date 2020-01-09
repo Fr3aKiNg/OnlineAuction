@@ -52,7 +52,7 @@
                                             style="margin-right: 9px; color: white;"></i>Add to
                                         watchlist</a>
                                 </button>
-                            </div s>
+                            </div>
 
                             <span>
                                 <table class="table table-responsive" style="margin: 0;border:none">
@@ -77,12 +77,13 @@
                                             <p>Buy Now: </p>
                                         </td>
                                         <td align="right">
-                                            <p>${{product.buy_now_price}}</p>
+                                            <b>${{product.buy_now_price}}</b>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td align="left">
-                                            <p>Seller: {{product.seller_name}}</p>
+                                            <p>Seller: < href="#">{{product.seller_name}}</>
+                                            </p>
                                         </td>
                                         <td align="right">
                                             <p>Rating: {{product.rate_seller}}</p>
@@ -90,7 +91,7 @@
                                     </tr>
                                     <tr>
                                         <td align="left">
-                                            <p>Highest bidder: {{product.winner_name}}</p>
+                                            <p>Highest bidder: <a href="#">{{product.winner_name}}</a></p>
                                         </td>
                                         <td align="right">
                                             <p>Rating: {{product.rate_winner}}</p>

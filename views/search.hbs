@@ -21,7 +21,7 @@
                                 <div class="panel-body">
                                     <ul>
                                         {{#each subCats}}
-                                        <li><a href="/products/byCat/{{cat_id}}">{{cat_name}}</a></li>
+                                        <li><a href="/search?catID={{cat_id}}">{{cat_name}}</a></li>
                                         {{/each}}
                                     </ul>
                                 </div>
@@ -46,7 +46,7 @@
             <div class="col-sm-9 padding-right">
                 <div class="features_items">
                     <!--features_items-->
-                    <h2 class="title text-center">Search for "{{searchName}}"</h2>
+                    <h2 class="title text-center">Search for "{{searchName}}{{cat_name}}"</h2>
                     {{#each searchItem}}
                     <div class="col-sm-4">
                         <div class="product-image-wrapper">
@@ -54,7 +54,7 @@
                                 <div class="productinfo text-center cursor-pointer"
                                     onclick="location.href='./product/{{product_id}}';">
                                     <img class="product-img" src="../public/assets/home/product1.jpg" alt="" />
-                                    <h2>${{currentPrice}}</h2>
+                                    <h2>${{offer_price}}</h2>
                                     <p style="font-weight: bold; font-size: 1.75rem;">{{name}}</p>
                                     <table class="table table-responsive" style="margin: 0;border:none">
                                         <tr>
@@ -76,11 +76,14 @@
                                     <a href="#" class="btn btn-warning add-to-cart"><i class="fas fa-rocket"></i>Bid
                                         now</a>
                                 </div>
+                                {{#if isNew}}
                                 <img src="../public/assets/home/new.png" class="new" alt="" />
+                                {{/if}}
                             </div>
                             <div class="choose">
                                 <ul class="nav nav-pills nav-justified">
                                     <li><a href="#"><i class="fa fa-plus-square"></i>Add to watchlist</a></li>
+
                                 </ul>
                             </div>
                         </div>
