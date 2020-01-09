@@ -59,12 +59,14 @@
                     </div>
                     <div class="col-sm-5">
                         <div class="shop-menu pull-right">
-                            <form id="frmLogout" action="/account/logout" method="post"></form>
+                            <form style="margin: 0 !important;" id="frmLogout" action="/account/logout" method="post">
+                            </form>
                             <ul class="nav navbar-nav">
                                 {{#if lcIsAuthenticated}}
                                 <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-                                <li><a href="#"><i class="fa fa-star"></i> Watchlist</a></li>
-                                <li><a href="javascript: $('#frmLogout').submit()"><i class="fa fa-lock"></i> Log out</a></li>
+                                <li><a href="/watchlist"><i class="fa fa-star"></i> Watchlist</a></li>
+                                <li><a href="javascript: $('#frmLogout').submit()"><i class="fa fa-lock"></i> Log
+                                        out</a></li>
                                 {{else}}
                                 <li onclick="location.href='/account/login';"><a class="cursor-pointer"><i
                                             class="fas fa-sign-in-alt"></i> Login</a>

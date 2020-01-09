@@ -109,7 +109,7 @@ module.exports = function(app) {
         // res.render('../viewProduct/topFiveTemplate');
     })
 
-    app.use('/watch_list', require('../routes/watch_list.route'));
+    app.use('/watchlist', require('../routes/watch_list.route'));
     app.use('/account', require('../routes/_account.route'));
     app.use('/categories', require('../routes/category.route'));
     app.use('/product', require('../routes/product.route'));
