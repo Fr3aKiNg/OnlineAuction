@@ -12,7 +12,6 @@ module.exports = {
         const rows = await db.load(`select count(*) as total from products where category_id = ${catId}`)
         return rows[0].total;
     },
-    pageByCatAndSearchString: (catId, offset, search_string) => db.load(`select * from products where name LIKE '%${search_string}%' and end_time > CURRENT_TIMESTAMP() and category_id = ${catId} limit ${config.pagination.limit} offset ${offset}`),
 
     getHighestPrice: _ => db.load('SELECT p.product_id as product_id, p.name as name, \
     u.username AS winner_username, p.offer_price AS offer_price, p.end_time AS end_time, p.posted_time AS posted_time, COUNT(*) AS count_offers\
@@ -61,4 +60,11 @@ module.exports.single = async function(id) {
     if (p[0].rate_winner === null) p[0].rate_winner = 100;
 
     return p[0];
+};
+
+module.exports.pageByCatAndSearchString = async function(catId, offset, search_string){
+    if (catId === undefined)
+        return db.load(`select * from products where name LIKE '%${search_string}%' and end_time > CURRENT_TIMESTAMP() limit ${config.pagination.limit} offset ${offset}`);
+
+    return db.load(`select * from products where name LIKE '%${search_string}%' and end_time > CURRENT_TIMESTAMP() and category_id = ${catId} limit ${config.pagination.limit} offset ${offset}`)
 };

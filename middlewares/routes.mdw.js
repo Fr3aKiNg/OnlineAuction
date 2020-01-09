@@ -66,6 +66,11 @@ module.exports = function(app) {
     app.get('/search', async function(req, res) {
         // res.send('hello expressjs');
         var categories = await categoryModel.allWithSubCat();
+        if (req.query.page === undefined)
+            req.query.page = 0;
+        if (req.query.searchString === undefined)
+            req.query.searchString = '';
+        
         var products = await productModel.pageByCatAndSearchString(req.query.catID, req.query.page, req.query.searchString)
 
         res.render('search', {
