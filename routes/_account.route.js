@@ -58,22 +58,24 @@ router.post('/register', async function(req, res) {
     const dob = moment(req.body.dob, 'DD/MM/YYYY').format('YYYY-MM-DD');
     const entity = {
         username: req.body.username,
-        password_hash: hash,
-        name: req.body.name,
+        hashpass: hash,
+        full_name: req.body.name,
         email: req.body.email,
-        dob,
-        permission: 0
+        dob: req.body.dob,
+        address: req.body.addr,
+        type: 3
     }
     const ret = await userModel.add(entity);
-    res.render('viewAccount/register');
+    
+    res.redirect(req.headers.referer);
 })
 
-router.get('/is-available', async function(req, res) {
+/*router.get('/is-available', async function(req, res) {
     const user = await userModel.singleByUserName(req.query.user);
     if (!user)
         return res.json(true);
 
     res.json(false);
-})
+})*/
 
 module.exports = router;

@@ -62,7 +62,7 @@ module.exports = function(app) {
 
     app.get('/search', async function(req, res) {
         // res.send('hello expressjs');
-        var categories = await categoryModel.allWithSubCat();
+        //var categories = await categoryModel.allWithSubCat();
         if (req.query.page === undefined)
             req.query.page = 1;
         if (req.query.searchString === undefined)
@@ -97,7 +97,7 @@ module.exports = function(app) {
 
 
         res.render('search', {
-            lcCategories: categories,
+            //lcCategories: categories,
             searchItem: products,
             searchName: req.query.searchString,
             catID: req.query.catID,
@@ -109,13 +109,7 @@ module.exports = function(app) {
         // res.render('../viewProduct/topFiveTemplate');
     })
 
-    app.get('/bs', function(req, res) {
-        // res.sendFile(__dirname + '/bs.html');
-        res.render('bs', {
-            layout: false
-        });
-    })
-
+    app.use('/watch_list', require('../routes/watch_list.route'));
     app.use('/account', require('../routes/_account.route'));
     app.use('/categories', require('../routes/category.route'));
     app.use('/product', require('../routes/product.route'));
