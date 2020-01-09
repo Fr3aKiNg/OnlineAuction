@@ -75,7 +75,9 @@ module.exports = function(app) {
 
         res.render('search', {
             lcCategories: categories,
-            searchItem: products
+            searchItem: products,
+            searchName: req.query.searchString,
+            catID: req.query.catID
         });
         // res.render('../viewProduct/topFiveTemplate');
     })
