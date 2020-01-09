@@ -12,7 +12,7 @@ module.exports = function (app) {
   })
 
   app.use(async function (req, res, next) {
-    const rows = await categoryModel.allWithDetails();
+    const rows = await categoryModel.allWithSubCat();
     res.locals.lcCategories = rows;
     next();
   })

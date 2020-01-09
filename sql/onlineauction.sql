@@ -4,7 +4,7 @@ use onlineauction;
 CREATE TABLE `users` (
   `user_id` int PRIMARY KEY AUTO_INCREMENT,
   `full_name` varchar(50),
-  `username` varchar(50),
+  `username` varchar(50) UNIQUE,
   `hashpass` varchar(255),
   `address` varchar(100),
   `dob` datetime,
