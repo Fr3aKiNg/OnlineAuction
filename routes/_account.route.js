@@ -48,7 +48,9 @@ router.get('/profile', restrict, async function(req, res) {
 })
 
 router.get('/register', async function(req, res) {
-    res.render('viewAccount/register');
+    res.render('viewAccount/register', {
+        layout: false
+    });
 })
 
 router.post('/register', async function(req, res) {
