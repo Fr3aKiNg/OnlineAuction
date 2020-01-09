@@ -15,7 +15,7 @@ module.exports = {
     pageByCat: (catId, offset) => db.load(`select * from products where category_id = ${catId} limit ${config.pagination.limit} offset ${offset}`),
 
     getHighestPrice: _ => db.load('SELECT p.product_id as product_id, p.name as name, \
-    u.username AS winner_username, p.offer_price AS offer_price, p.end_time AS end_time, COUNT(*) AS count_offers\
+    u.username AS winner_username, p.offer_price AS offer_price, p.end_time AS end_time, p.posted_time AS posted_time, COUNT(*) AS count_offers\
     FROM products p, users u, offers o\
     WHERE o.product_id = p.product_id AND u.user_id = p.winner_id AND end_time > CURRENT_TIMESTAMP()\
     GROUP BY p.product_id, p.name, u.username, p.offer_price, p.end_time\
@@ -23,7 +23,7 @@ module.exports = {
     LIMIT 5;'),
 
     getAlmostEndTime: _ => db.load('SELECT p.product_id as product_id, p.name as name, \
-    u.username AS winner_username, p.offer_price AS offer_price, p.end_time AS end_time, COUNT(*) AS count_offers\
+    u.username AS winner_username, p.offer_price AS offer_price, p.end_time AS end_time, p.posted_time AS posted_time, COUNT(*) AS count_offers\
     FROM products p, users u, offers o\
     WHERE o.product_id = p.product_id AND u.user_id = p.winner_id AND end_time > CURRENT_TIMESTAMP()\
     GROUP BY p.product_id, p.name, u.username, p.offer_price, p.end_time\
@@ -31,7 +31,7 @@ module.exports = {
     LIMIT 5;'),
 
     getTopBiddingTurn: _ => db.load('SELECT p.product_id as product_id, p.name as name, \
-    u.username AS winner_username, p.offer_price AS offer_price, p.end_time AS end_time, COUNT(*) AS count_offers\
+    u.username AS winner_username, p.offer_price AS offer_price, p.end_time AS end_time, p.posted_time AS posted_time, COUNT(*) AS count_offers\
     FROM products p, users u, offers o\
     WHERE o.product_id = p.product_id AND u.user_id = p.winner_id AND end_time > CURRENT_TIMESTAMP()\
     GROUP BY p.product_id, p.name, u.username, p.offer_price, p.end_time\

@@ -15,12 +15,40 @@ module.exports = function(app) {
         var HighestPrice = await productModel.getHighestPrice();
         var BiddingTurn = await productModel.getTopBiddingTurn();
 
-        for (var i in LeastTimeRemain) {
-            LeastTimeRemain[i].end_time = moment(LeastTimeRemain[i].end_time).format('LLL');
-            console.log(LeastTimeRemain[i].end_time.valueOf() - Date.now());
-            console.log(Date.now());
+        for (var i in LeastTimeRemain) 
+        {
+            LeastTimeRemain[i].offer_price = numeral(LeastTimeRemain[i].offer_price).format('0,0');
+            LeastTimeRemain[i].isNew = (Date.now() - LeastTimeRemain[i].posted_time.valueOf()) / 1000 / 60 < 60;
+            LeastTimeRemain[i].isEndSoon = (LeastTimeRemain[i].end_time - Date.now()) / 1000 / 60 / 60 / 24 < 7;
+            if (LeastTimeRemain[i].isEndSoon)
+                LeastTimeRemain[i].end_time = moment(LeastTimeRemain[i].end_time).fromNow();
+            else
+                LeastTimeRemain[i].end_time = moment(LeastTimeRemain[i].end_time).format('LLL');
         }
 
+        for (var i in HighestPrice) 
+        {
+            HighestPrice[i].offer_price = numeral(HighestPrice[i].offer_price).format('0,0');
+            HighestPrice[i].isNew = (Date.now() - HighestPrice[i].posted_time.valueOf()) / 1000 / 60 < 60;
+
+            HighestPrice[i].isEndSoon = (HighestPrice[i].end_time - Date.now()) / 1000 / 60 / 60 / 24 < 7;
+            if (HighestPrice[i].isEndSoon)
+                HighestPrice[i].end_time = moment(HighestPrice[i].end_time).fromNow();
+            else
+                HighestPrice[i].end_time = moment(HighestPrice[i].end_time).format('LLL');        
+        }
+
+        for (var i in BiddingTurn) 
+        {
+            BiddingTurn[i].offer_price = numeral(BiddingTurn[i].offer_price).format('0,0');
+            BiddingTurn[i].isNew = (Date.now() - BiddingTurn[i].posted_time.valueOf()) / 1000 / 60 < 60;
+
+            BiddingTurn[i].isEndSoon = (BiddingTurn[i].end_time - Date.now()) / 1000 / 60 / 60 / 24 < 7;
+            if (BiddingTurn[i].isEndSoon)
+                BiddingTurn[i].end_time = moment(BiddingTurn[i].end_time).fromNow();
+            else
+                BiddingTurn[i].end_time = moment(BiddingTurn[i].end_time).format('LLL');        
+        }
 
         res.render('home', {
             lcCategories: categories,
