@@ -64,11 +64,11 @@ module.exports = function(app) {
         // res.send('hello expressjs');
         var categories = await categoryModel.allWithSubCat();
         if (req.query.page === undefined)
-            req.query.page = 0;
+            req.query.page = 1;
         if (req.query.searchString === undefined)
             req.query.searchString = '';
 
-        var products = await productModel.pageByCatAndSearchString(req.query.catID, req.query.page, req.query.searchString);
+        var products = await productModel.pageByCatAndSearchString(req.query.catID, (req.query.page - 1) * config.pagination.limit, req.query.searchString);
 
         for (var i in products) {
             products[i].offer_price = numeral(products[i].offer_price).format('0,0');
@@ -80,20 +80,21 @@ module.exports = function(app) {
                 products[i].end_time = moment(products[i].end_time).format('LLL');
         }
 
-        var numProduct = await productModel.countByCatAndSearchString(req.query.catID, req.query.page, req.query.searchString);
+        var numProduct = await productModel.countByCatAndSearchString(req.query.catID, req.query.searchString);
         var numPage = Math.ceil(numProduct / config.pagination.limit);
 
         const page_items = [];
         for (i = 1; i <= numPage; i++) {
-          const item = {
-            value: i,
-            isActive: i === req.query.page
-          }
-          page_items.push(item);
+            const item = {
+                value: i,
+                isActive: i == req.query.page
+            }
+            page_items.push(item);
         }
 
-        if (req.query.catID !== undefined)
+        if (req.query.catID !== undefined && req.query.catID.length !== 0)
             var cats = await categoryModel.single(req.query.catID);
+
 
         res.render('search', {
             lcCategories: categories,
@@ -103,6 +104,7 @@ module.exports = function(app) {
             curPage: req.query.page,
             page_items: page_items,
             catName: cats
+
         });
         // res.render('../viewProduct/topFiveTemplate');
     })
