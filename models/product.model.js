@@ -19,7 +19,7 @@ module.exports = {
     FROM (products p JOIN users u ON u.user_id = p.winner_id) LEFT JOIN offers o ON o.product_id = p.product_id \
     WHERE end_time > CURRENT_TIMESTAMP() \
     GROUP BY p.product_id, p.name, u.username, p.offer_price, p.end_time, p.posted_time \
-    ORDER BY p.offer_price\
+    ORDER BY p.offer_price DESC\
     LIMIT 5;'),
 
     getAlmostEndTime: _ => db.load('SELECT p.product_id as product_id, p.name as name, \
