@@ -1254,7 +1254,7 @@ h2.title {
 .product-information span {
     display: inline-block;
     margin-bottom: 8px;
-    margin-top: 18px;
+    /* margin-top: 18px; */
 }
 
 .product-information span span {
