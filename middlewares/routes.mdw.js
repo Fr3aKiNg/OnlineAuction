@@ -66,12 +66,11 @@ module.exports = function(app) {
     app.get('/search', async function(req, res) {
         // res.send('hello expressjs');
         var categories = await categoryModel.allWithSubCat();
-        var BiddingTurn = await productModel.getTopBiddingTurn(); //remember to change
-
+        var products = await productModel.pageByCatAndSearchString(req.query.catID, req.query.page, req.query.searchString)
 
         res.render('search', {
             lcCategories: categories,
-            topBiddingProduct: BiddingTurn
+            searchItem: products
         });
         // res.render('../viewProduct/topFiveTemplate');
     })

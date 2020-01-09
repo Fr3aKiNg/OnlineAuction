@@ -12,7 +12,7 @@ module.exports = {
         const rows = await db.load(`select count(*) as total from products where category_id = ${catId}`)
         return rows[0].total;
     },
-    pageByCat: (catId, offset) => db.load(`select * from products where category_id = ${catId} limit ${config.pagination.limit} offset ${offset}`),
+    pageByCatAndSearchString: (catId, offset, search_string) => db.load(`select * from products where name LIKE '%${search_string}%' and end_time > CURRENT_TIMESTAMP() and category_id = ${catId} limit ${config.pagination.limit} offset ${offset}`),
 
     getHighestPrice: _ => db.load('SELECT p.product_id as product_id, p.name as name, \
     u.username AS winner_username, p.offer_price AS offer_price, p.end_time AS end_time, p.posted_time AS posted_time, COUNT(*) AS count_offers\
