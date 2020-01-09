@@ -15,7 +15,7 @@ require('./middlewares/session.mdw')(app);
 //Khai bao view engine
 require('./middlewares/view.mdw')(app);
 
-//require('./middlewares/locals.mdw')(app);
+require('./middlewares/locals.mdw')(app);
 
 require('./middlewares/routes.mdw')(app);
 require('./middlewares/error.mdw')(app);

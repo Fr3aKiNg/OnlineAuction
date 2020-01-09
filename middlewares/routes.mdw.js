@@ -9,7 +9,7 @@ const numeral = require('numeral')
 module.exports = function(app) {
     app.get('/', async function(req, res) {
         // res.send('hello expressjs');
-        var categories = await categoryModel.allWithSubCat();
+        //var categories = await categoryModel.allWithSubCat();
 
         var LeastTimeRemain = await productModel.getAlmostEndTime();
         var HighestPrice = await productModel.getHighestPrice();
@@ -48,7 +48,7 @@ module.exports = function(app) {
         }
 
         res.render('home', {
-            lcCategories: categories,
+            //lcCategories: categories,
             topLeastTimeRemain: LeastTimeRemain,
             topHighestPrice: HighestPrice,
             topBiddingProduct: BiddingTurn
