@@ -40,7 +40,7 @@ module.exports = {
     },
 
     single: async id => {
-        const sql = `select * from categories where CatID = ${id}`;
+        const sql = `select * from categories where cat_id = ${id}`;
         const rows = await db.load(sql);
         if (rows.length === 0)
             return null;

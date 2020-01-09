@@ -67,11 +67,24 @@ module.exports = function(app) {
             req.query.page = 0;
         if (req.query.searchString === undefined)
             req.query.searchString = '';
-        
+
         var products = await productModel.pageByCatAndSearchString(req.query.catID, req.query.page, req.query.searchString);
+
+        for (var i in products) {
+            products[i].offer_price = numeral(products[i].offer_price).format('0,0');
+            products[i].isNew = (Date.now() - products[i].posted_time.valueOf()) / 1000 / 60 < 60;
+            products[i].isEndSoon = (products[i].end_time - Date.now()) / 1000 / 60 / 60 / 24 < 7;
+            if (products[i].isEndSoon)
+                products[i].end_time = moment(products[i].end_time).fromNow();
+            else
+                products[i].end_time = moment(products[i].end_time).format('LLL');
+        }
+
         var numProduct = await productModel.countByCatAndSearchString(req.query.catID, req.query.page, req.query.searchString);
         var numPage = Math.ceil(numProduct / config.pagination.limit);
-        var catName = await categoryModel.single(catID);
+
+        if (req.query.catID !== undefined)
+            var cats = await categoryModel.single(req.query.catID);
 
         res.render('search', {
             lcCategories: categories,
@@ -80,7 +93,7 @@ module.exports = function(app) {
             catID: req.query.catID,
             curPage: req.query.page,
             numPage: numPage,
-            catName: catName
+            catName: cats
         });
         // res.render('../viewProduct/topFiveTemplate');
     })
