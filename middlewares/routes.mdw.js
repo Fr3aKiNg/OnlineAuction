@@ -83,6 +83,15 @@ module.exports = function(app) {
         var numProduct = await productModel.countByCatAndSearchString(req.query.catID, req.query.page, req.query.searchString);
         var numPage = Math.ceil(numProduct / config.pagination.limit);
 
+        const page_items = [];
+        for (i = 1; i <= numPage; i++) {
+          const item = {
+            value: i,
+            isActive: i === req.query.page
+          }
+          page_items.push(item);
+        }
+
         if (req.query.catID !== undefined)
             var cats = await categoryModel.single(req.query.catID);
 
@@ -92,7 +101,7 @@ module.exports = function(app) {
             searchName: req.query.searchString,
             catID: req.query.catID,
             curPage: req.query.page,
-            numPage: numPage,
+            page_items: page_items,
             catName: cats
         });
         // res.render('../viewProduct/topFiveTemplate');
