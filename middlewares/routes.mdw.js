@@ -15,8 +15,7 @@ module.exports = function(app) {
         var HighestPrice = await productModel.getHighestPrice();
         var BiddingTurn = await productModel.getTopBiddingTurn();
 
-        for (var i in LeastTimeRemain) 
-        {
+        for (var i in LeastTimeRemain) {
             LeastTimeRemain[i].offer_price = numeral(LeastTimeRemain[i].offer_price).format('0,0');
             LeastTimeRemain[i].isNew = (Date.now() - LeastTimeRemain[i].posted_time.valueOf()) / 1000 / 60 < 60;
             LeastTimeRemain[i].isEndSoon = (LeastTimeRemain[i].end_time - Date.now()) / 1000 / 60 / 60 / 24 < 7;
@@ -26,8 +25,7 @@ module.exports = function(app) {
                 LeastTimeRemain[i].end_time = moment(LeastTimeRemain[i].end_time).format('LLL');
         }
 
-        for (var i in HighestPrice) 
-        {
+        for (var i in HighestPrice) {
             HighestPrice[i].offer_price = numeral(HighestPrice[i].offer_price).format('0,0');
             HighestPrice[i].isNew = (Date.now() - HighestPrice[i].posted_time.valueOf()) / 1000 / 60 < 60;
 
@@ -35,11 +33,10 @@ module.exports = function(app) {
             if (HighestPrice[i].isEndSoon)
                 HighestPrice[i].end_time = moment(HighestPrice[i].end_time).fromNow();
             else
-                HighestPrice[i].end_time = moment(HighestPrice[i].end_time).format('LLL');        
+                HighestPrice[i].end_time = moment(HighestPrice[i].end_time).format('LLL');
         }
 
-        for (var i in BiddingTurn) 
-        {
+        for (var i in BiddingTurn) {
             BiddingTurn[i].offer_price = numeral(BiddingTurn[i].offer_price).format('0,0');
             BiddingTurn[i].isNew = (Date.now() - BiddingTurn[i].posted_time.valueOf()) / 1000 / 60 < 60;
 
@@ -47,7 +44,7 @@ module.exports = function(app) {
             if (BiddingTurn[i].isEndSoon)
                 BiddingTurn[i].end_time = moment(BiddingTurn[i].end_time).fromNow();
             else
-                BiddingTurn[i].end_time = moment(BiddingTurn[i].end_time).format('LLL');        
+                BiddingTurn[i].end_time = moment(BiddingTurn[i].end_time).format('LLL');
         }
 
         res.render('home', {
