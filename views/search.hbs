@@ -95,12 +95,16 @@
     width: fit-content;
 ">
                     <ul class="pagination  justify-content-center">
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item active">
-                            <a class="page-link" href="#">2</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        {{#each page_items}}
+                        {{#if isActive}}
+                        <li class="page-item active"><a class="page-link"
+                                href="/search?{{#if catID}}catID={{catID}}{{/if}}">{{value}}</a></li>
+                        {{else}}
+                        <li class="page-item "><a class="page-link" href="#">{{value}}</a></li>
+                        {{/if}}
+                        {{/each}}
                     </ul>
+
                 </div>
             </div>
         </div>
