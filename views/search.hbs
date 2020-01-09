@@ -59,74 +59,34 @@
                                     <table class="table table-responsive" style="margin: 0;border:none">
                                         <tr>
                                             <td align="center">
-                                                <p>{{bidderName}} bidded!</p>
+                                                <p><b>{{winner_username}}</b> bidded!</p>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td align="center">
-                                                <p>{{bidTurn}} turns left!</p>
+                                                <p><b>{{count_offers}}</b> offers!</p>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td align="center">
-                                                <p>{{timeRemain}} remain!</p>
+                                                <p>End {{end_time}}</p>
                                             </td>
                                         </tr>
                                     </table>
                                     <a href="#" class="btn btn-warning add-to-cart"><i class="fas fa-rocket"></i>Bid
                                         now</a>
                                 </div>
-                                {{!-- <div class="product-overlay">
-                            <div class="overlay-content">
-                                <h2>${{currentPrice}}</h2>
-                                <p>{{name}}</p>
-                                <p>{{priceHolder}}</p>
-                                <p>{{timeRemain}}</p>
-                                <p>{{bidTurn}}</p>
-                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add
-                                    to cart</a>
-                            </div>
-                        </div> --}}
-                                {{!-- <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Base price: <b class="float-right">$150</b></li>
-                                    <li class="list-group-item">Max price: <b class="float-right">$200</b></li>
-                                    <li class="list-group-item">Bid: <b class="float-right">$168</b></li>
-                                    <li class="list-group-item">Time remain: <b class="float-right">2 days</b></li>
-                                </ul> --}}
-
                                 <img src="../public/assets/home/new.png" class="new" alt="" />
                             </div>
                             <div class="choose">
                                 <ul class="nav nav-pills nav-justified">
                                     <li><a href="#"><i class="fa fa-plus-square"></i>Add to watchlist</a></li>
-
                                 </ul>
                             </div>
                         </div>
                     </div>
                     {{/each}}
                 </div>
-
-                {{!-- {{#each topBiddingProduct}}
-            <div class="card" style="width: 220px;">
-                <img class="card-img-top cursor-pointer"
-                    src="./assets//items//0171ccc9b5276d1bca263d3d5af25cd0.jpg_200x200q80.jpg" alt="Card image cap"
-                    href="./itemDetail.html" onclick="document.location='itemDetail.html';return false;">
-                <div class="card-body">
-                    <h5 class="card-title">{{productTitle}}</h5>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Base price: <b class="float-right">${{basePrice}}</b></li>
-                    <li class="list-group-item">Max price: <b class="float-right">${{maxPrice}}</b></li>
-                    <li class="list-group-item">Bid: <b class="float-right">${{bidPrice}}</b></li>
-                    <li class="list-group-item">Time remain: <b class="float-right">{{remainTime}}</b></li>
-                </ul>
-                <div class="card-body row justify-content-between">
-                    <button type="button" class="btn btn-success col-5">Buy now</button>
-                    <button type="button" class="btn btn-primary col-5">Bid now</button>
-                </div>
-            </div>
-            {{/each}} --}}
                 <div style="
     margin: auto;
     width: fit-content;

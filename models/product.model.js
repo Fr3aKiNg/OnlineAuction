@@ -57,7 +57,7 @@ module.exports.single = async function(id) {
     return p[0];
 };
 
-module.exports.pageByCatAndSearchString = async function(catId, offset, search_string){
+module.exports.pageByCatAndSearchString = async function(catId, offset, search_string) {
     if (catId === undefined)
         return db.load(`SELECT p.product_id as product_id, p.name as name, \
         u.username AS winner_username, p.offer_price AS offer_price, p.end_time AS end_time, p.posted_time AS posted_time, COUNT(*) AS count_offers \
