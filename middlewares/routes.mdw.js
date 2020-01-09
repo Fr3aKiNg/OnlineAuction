@@ -1,6 +1,6 @@
 const categoryModel = require('../models/category.model');
-
 const productModel = require('../models/product.model');
+const config = require('../config/default.json');
 
 const moment = require('moment')
 const numeral = require('numeral')
@@ -71,13 +71,17 @@ module.exports = function(app) {
         if (req.query.searchString === undefined)
             req.query.searchString = '';
         
-        var products = await productModel.pageByCatAndSearchString(req.query.catID, req.query.page, req.query.searchString)
+        var products = await productModel.pageByCatAndSearchString(req.query.catID, req.query.page, req.query.searchString);
+        var numProduct = await productModel.countByCatAndSearchString(req.query.catID, req.query.page, req.query.searchString);
+        var numPage = Math.ceil(numProduct / config.pagination.limit);
 
         res.render('search', {
             lcCategories: categories,
             searchItem: products,
             searchName: req.query.searchString,
-            catID: req.query.catID
+            catID: req.query.catID,
+            curPage: req.query.page,
+            numPage: numPage
         });
         // res.render('../viewProduct/topFiveTemplate');
     })
