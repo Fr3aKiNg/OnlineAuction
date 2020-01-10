@@ -10,5 +10,7 @@ module.exports = {
     WHERE end_time > CURRENT_TIMESTAMP() AND p.product_id IN (select product_id from watch_list where user_id = ${user_id})\
     GROUP BY p.product_id, p.name, u.username, p.offer_price, p.end_time, p.posted_time`);
     return rows;
-  }
+  },
+
+  checkWatchlist: async (user_id, product_id) => db.load(`select * from watch_list where user_id = ${user_id} and product_id = ${product_id}`)
 };
