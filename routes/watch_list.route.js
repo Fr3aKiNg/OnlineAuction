@@ -26,4 +26,14 @@ router.get('/', restrict, async function(req, res) {
     });
 })
 
+router.post('/', async function(req, res) {
+    entity = {
+        product_id: req.body.product_id,
+        user_id: req.session.authUser.user_id
+    }
+
+    const ret = await watchListModel.add(entity);
+    res.redirect(req.headers.referer);
+})
+
 module.exports = router;
