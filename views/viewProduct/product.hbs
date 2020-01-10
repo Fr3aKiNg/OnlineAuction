@@ -54,13 +54,22 @@
                             <img src="images/product-details/new.jpg" class="newarrival" alt="" />
                             <div style="height: inherit;">
                                 <h1 style="float: left;">{{product.name}}</h1>
-                                <form style="margin: 0 !important;" id="frmAddWatchList" action="/watchlist" method="post">
+                                <form style="margin: 0 !important;" id="frmAddWatchList" action="/watchlist"
+                                    method="post">
                                     <input type="hidden" name="product_id" value={{product.product_id}}></input>
                                 </form>
                                 <button type="button" class="btn btn-fefault cart" style="margin: 20px;">
-                                    <a href="javascript: $('#frmAddWatchList').submit()" style="color: white;"><i class="fa fa-plus-square"
-                                            style="margin-right: 9px; color: white;"></i>Add to
+                                    {{#if lcIsAuthenticated}}
+                                    <a href="javascript: $('#frmAddWatchList').submit()" style="color: white;"><i
+                                            class="fa fa-plus-square" style="margin-right: 9px; color: white;"></i>Add
+                                        to
                                         watchlist</a>
+                                    {{else}}
+                                    <a href="/account/login" style="color: white;"><i class="fa fa-plus-square"
+                                            style="margin-right: 9px; color: white;"></i>Add
+                                        to
+                                        watchlist</a>
+                                    {{/if}}
                                 </button>
                             </div>
 

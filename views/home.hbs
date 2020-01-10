@@ -149,9 +149,21 @@
                                 <img src="../public/assets/home/new.png" class="new" alt="" />
                                 {{/if}}
                             </div>
+
                             <div class="choose">
+                                <form style="margin: 0 !important;" id="frmAddWatchList{{product_id}}"
+                                    action="/watchlist" method="post">
+                                    <input type="hidden" name="product_id" value={{product_id}}></input>
+                                </form>
                                 <ul class="nav nav-pills nav-justified">
-                                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to watchlist</a></li>
+                                    <li>
+                                        {{#if lcIsAuthenticated}}
+                                        <a href="javascript: $('#frmAddWatchList{{product_id}}').submit()"><i
+                                                class="fa fa-plus-square"></i>Add to watchlist</a>
+                                        {{else}}
+                                        <a href="/account/login"><i class="fa fa-plus-square"></i>Add to watchlist</a>
+                                        {{/if}}
+                                    </li>
 
                                 </ul>
                             </div>
